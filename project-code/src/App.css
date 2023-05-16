@@ -1,10 +1,26 @@
 .App {
   text-align: center;
 }
+
+.homePage img {
+  border-radius: 15px;
+}
+
+.homeTitle {
+  color: rgb(113, 158, 173);
+}
+
+.siteLogo {
+  color: rgb(94, 136, 151);
+  font-weight: bold;
+  padding: 1rem;
+}
+
 .footer-text {
+  color: rgb(94, 136, 151);
   padding: 1rem;
   float:right;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .footer {
@@ -15,4 +31,5 @@
   line-height: 60px; /* Vertically center the text there */
   background-color: #f5f5f5;
 }
+
 

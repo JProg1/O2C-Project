@@ -7,7 +7,7 @@ export default function HomePage() {
             <Container>
                 <Row style={{marginTop: 1 + 'em'}}>
                     <Col>
-                        <h1 classname="HomeHeader"> Welcome to OP-Prop<br/>
+                        <h1 className="homeTitle"> Welcome to OP-Prop<br/>
                             property management solutions</h1>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lobortis mauris ut velit vestibulum efficitur. Duis nec quam ipsum. Fusce cursus lacus ut elit imperdiet, ut venenatis orci sodales. 
@@ -15,7 +15,7 @@ export default function HomePage() {
                         </p>
                     </Col>
                     <Col>
-                        <img src="https://placehold.co/500"></img>
+                        <img src="https://placehold.co/400"></img>
                     </Col>
                 </Row>
             </Container>
