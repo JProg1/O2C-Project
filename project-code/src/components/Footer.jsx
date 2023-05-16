@@ -8,7 +8,7 @@ export default function Footer() {
             <footer>
             <Container>
                 <Row className="footer-text">
-                    <h4>Test Footer</h4>
+                    <h4>Copyright © 2023</h4>
                 </Row>
             </Container>
             </footer>
