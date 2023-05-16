@@ -2,6 +2,7 @@
   text-align: center;
 }
 .footer-text {
+  padding: 1rem;
   float:right;
   margin-top: 50px;
 }
