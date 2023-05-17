@@ -1,5 +1,7 @@
 import { Container, Form, Row, Tab, Tabs, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
+import './CustStyle.css';
+
 import CustomerItem from "../components/CustomerItem";
 // Homepage includes some react-bootstrap components to shape the page, introducing the bootstrap grid.
 export default function CustomerPage() {
@@ -30,7 +32,7 @@ export default function CustomerPage() {
                     {/* Buyers list - add hovers and onClicks. */}
                     {buyerData.map((item) => (
                         <Col>
-                            <CustomerItem id={item.id}
+                            <CustomerItem className="custItem" id={item.id}
                                 name={item.title + ' ' + item.first_name + ' ' + item.surname}
                                 address={item.addr_no + ' ' + item.addr_line_1 + ", " + item.addr_town + ', ' + item.addr_postcode}
                                 phone={item.phone}
