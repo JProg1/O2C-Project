@@ -8,7 +8,7 @@ function NavBar() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home"><h1 className='siteLogo'>Op Prop</h1></Navbar.Brand>
+        <Navbar.Brand href="/"><h1 className='siteLogo'>Op Prop</h1></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav activeKey={location.pathname} className="justify-content-end flex-grow-1 pe-3">

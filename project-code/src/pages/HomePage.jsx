@@ -1,24 +1,22 @@
-import { Container, Row, Col } from "react-bootstrap";
-
 // Homepage includes some react-bootstrap components to shape the page, introducing the bootstrap grid.
 export default function HomePage() {
     return (
-        <div className="homePage">
-            <Container>
-                <Row style={{marginTop: 1 + 'em'}}>
-                    <Col>
-                        <h1 className="homeTitle"> Welcome to OP-Prop<br/>
-                            property management solutions</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lobortis mauris ut velit vestibulum efficitur. Duis nec quam ipsum. Fusce cursus lacus ut elit imperdiet, ut venenatis orci sodales. 
-                            
-                        </p>
-                    </Col>
-                    <Col>
-                        <img src="https://placehold.co/400"></img>
-                    </Col>
-                </Row>
-            </Container>
+
+    <div className="homepage">
+            
+            <div className="writing">            
+                <h1 className="homeTitle">Welcome to OP-Prop<br/>Property Management solutions.</h1>
+                    <p>Use the links to get started. The customer link will take you to the buyer & seller detail page
+                        whilst the property page will take you to property detail.</p>
+                <a href="/cust" max-width="200">Customers</a>
+                <a href="/prop" max-width="200">Properties</a>
+            </div> 
+
+        <div>
+            <img src="https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width="450px" alt="Plant" />
         </div>
+
+</div>
+
     );
 }
