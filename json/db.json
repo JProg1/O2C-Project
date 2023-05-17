@@ -38,8 +38,23 @@
     "properties": [
         {
             "id": 1,
-            "body": "some comment",
-            "postId": 1
+            "cust_ref": 2,
+            "status": "FOR SALE",
+            "asking_price": 125000,
+            "addr_no": "54",
+            "addr_line_1": "Referee Lane",
+            "addr_town": "Toon",
+            "addr_postcode": "PO5 4DE"
+        },
+        {
+            "id": 2,
+            "cust_ref": 2,
+            "status": "SOLD",
+            "asking_price": 15000,
+            "addr_no": "55",
+            "addr_line_1": "Referee Lane",
+            "addr_town": "Toon",
+            "addr_postcode": "PO5 4DE"
         }
     ]
 }
