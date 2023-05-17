@@ -1,6 +1,10 @@
 {
     "customers": [
-      { "id": 1, "title": "Mr", "first_name": "James", "surname": "Johnson", "email": "james@johnson.co.uk", "phone": "07500657463", "addr_no": "1", "addr_line_1": "Address Lane", "addr_town": "Towny", "addr_postcode": "PO5 4DE", "buyer_budget": "00000",
+        { "id": 1, "title": "Mr", "first_name": "James", "surname": "Johnson", "email": "james@johnson.co.uk", "phone": "07500657463", "addr_no": "1", "addr_line_1": "Address Lane", "addr_town": "Towny", "addr_postcode": "PO5 4DE", "buyer_budget": "00000",
+        "seller_prop_links": [
+            "0000", "0001"
+        ] },
+        { "id": 2, "title": "Mr", "first_name": "James", "surname": "Johnson", "email": "james@johnson.co.uk", "phone": "07500657463", "addr_no": "1", "addr_line_1": "Address Lane", "addr_town": "Towny", "addr_postcode": "PO5 4DE", "buyer_budget": "00000",
         "seller_prop_links": [
             "0000", "0001"
         ] }
