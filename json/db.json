@@ -1,5 +1,5 @@
 {
-    "customers": [
+    "buyers": [
         {
             "id": 1,
             "title": "Mr",
@@ -11,11 +11,7 @@
             "addr_line_1": "Address Lane",
             "addr_town": "Towny",
             "addr_postcode": "PO5 4DE",
-            "buyer_budget": "00000",
-            "seller_prop_links": [
-                "0000",
-                "0001"
-            ]
+            "buyer_budget": "00000"
         },
         {
             "id": 2,
@@ -23,6 +19,21 @@
             "first_name": "Ralph",
             "surname": "Rossin",
             "email": "ralph@ralphnet.com",
+            "phone": "07500657463",
+            "addr_no": "1",
+            "addr_line_1": "Address Lane",
+            "addr_town": "Towny",
+            "addr_postcode": "PO5 4DE",
+            "buyer_budget": "00000"
+        }
+    ],
+    "sellers": [
+        {
+            "id": 1,
+            "title": "Mr",
+            "first_name": "James",
+            "surname": "Johnson",
+            "email": "james@johnson.co.uk",
             "phone": "07500657463",
             "addr_no": "1",
             "addr_line_1": "Address Lane",
