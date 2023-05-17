@@ -1,24 +1,63 @@
-import { Container, Row, Col, Nav } from "react-bootstrap";
+import { Container, Form, Row, Tab, Tabs, Col } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import './CustStyle.css';
 
+import CustomerItem from "../components/CustomerItem";
 // Homepage includes some react-bootstrap components to shape the page, introducing the bootstrap grid.
 export default function CustomerPage() {
+    const [buyerData, setBuyerData] = useState([]);
+    const [sellerData, setSellerData] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:3004/buyers')
+        .then((response) => response.json())
+        .then((data) => setBuyerData(data));
+    }, []);
+    useEffect(() => {
+        fetch('http://localhost:3004/sellers')
+        .then((response) => response.json())
+        .then((data) => setSellerData(data));
+    }, []);
     return (
         <div className="custPage">
             <Container>
+                <h2 style={{marginTop: 0.5 + 'em'}}>Customers</h2>
                 <Row style={{marginTop: 1 + 'em'}}>
-                    <Nav variant="tabs" defaultActiveKey="/home">
-                        <Nav.Item>
-                            <Nav.Link href="/home">Active</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link eventKey="link-1">Option 2</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link eventKey="disabled" disabled>
-                            Disabled
-                            </Nav.Link>
-                        </Nav.Item>
-                    </Nav>
+                <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
+                <Tab style={{marginTop: 1 + 'em'}} eventKey={1} title="Buyers">
+                    <Row style={{marginBottom: 1 + 'em'}}>
+                        <Form>
+                        <Form.Control type="text" placeholder="Search" />
+                        </Form>
+                    </Row>
+                    {/* Buyers list - add hovers and onClicks. */}
+                    {buyerData.map((item) => (
+                        <Col>
+                            <CustomerItem className="custItem" id={item.id}
+                                name={item.title + ' ' + item.first_name + ' ' + item.surname}
+                                address={item.addr_no + ' ' + item.addr_line_1 + ", " + item.addr_town + ', ' + item.addr_postcode}
+                                phone={item.phone}
+                                email={item.email}/>
+                        </Col>
+                    ))}
+                </Tab>
+                <Tab style={{marginTop: 1 + 'em'}} eventKey={2} title="Sellers">
+                    <Row style={{marginBottom: 1 + 'em'}}>
+                        <Form>
+                        <Form.Control type="text" placeholder="Search" />
+                        </Form>
+                    </Row>
+                    {/* Selers List */}
+                    {sellerData.map((item) => (
+                        <Col>
+                            <CustomerItem id={item.id}
+                                name={item.title + ' ' + item.first_name + ' ' + item.surname}
+                                address={item.addr_no + ' ' + item.addr_line_1 + ", " + item.addr_town + ', ' + item.addr_postcode}
+                                phone={item.phone}
+                                email={item.email}/>
+                        </Col>
+                    ))}
+                </Tab>
+                </Tabs>
                 </Row>
             </Container>
         </div>
