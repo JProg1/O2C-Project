@@ -11,7 +11,7 @@ function NavBar() {
         <Navbar.Brand href="#home"><h1 className='siteLogo'>Op Prop</h1></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav activeKey={location.pathname} className="me-auto">
+          <Nav activeKey={location.pathname} className="justify-content-end flex-grow-1 pe-3">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/cust">Customer</Nav.Link>
             <Nav.Link href="/prop">Property</Nav.Link>
