@@ -11,7 +11,7 @@
             "addr_line_1": "Address Lane",
             "addr_town": "Towny",
             "addr_postcode": "PO5 4DE",
-            "buyer_budget": "00000"
+            "buyer_budget": 90000
         },
         {
             "id": 2,
@@ -24,7 +24,7 @@
             "addr_line_1": "Right Road",
             "addr_town": "Rudolfvile",
             "addr_postcode": "RO1 2RD",
-            "buyer_budget": "225000"
+            "buyer_budget": 225000
         },
         {
             "id": 3,
@@ -37,7 +37,7 @@
             "addr_line_1": "High Street",
             "addr_town": "Blackpool",
             "addr_postcode": "BO1 1AA",
-            "buyer_budget": "555000"
+            "buyer_budget": 555000
         }
     ],
     "sellers": [
@@ -53,6 +53,7 @@
             "addr_town": "Alnwick",
             "addr_postcode": "PF9 3QT",
             "seller_prop_links": [
+                1, 2
             ]
         },
         {
@@ -73,7 +74,7 @@
     "properties": [
         {
             "id": 1,
-            "cust_ref": 2,
+            "cust_ref": 1,
             "status": "FOR SALE",
             "asking_price": 125000,
             "addr_no": "54",
@@ -85,7 +86,7 @@
 
         {
             "id": 2,
-            "cust_ref": 2,
+            "cust_ref": 1,
             "status": "SOLD",
             "asking_price": 15000,
             "addr_no": "55",
