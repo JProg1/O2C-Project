@@ -1,6 +1,5 @@
 import { Button, Card } from "react-bootstrap";
 // Will import from JSON as this item will be mapped
-
 export default function CustomerItem({id, name, address, phone, email, buyer_budget, properties}){
     var properties_display = "";
     var isSeller = false;
