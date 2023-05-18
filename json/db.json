@@ -74,7 +74,7 @@
     "properties": [
         {
             "id": 1,
-            "cust_ref": 2,
+            "cust_ref": 1,
             "status": "FOR SALE",
             "asking_price": 125000,
             "addr_no": "54",
@@ -86,7 +86,7 @@
 
         {
             "id": 2,
-            "cust_ref": 2,
+            "cust_ref": 1,
             "status": "SOLD",
             "asking_price": 15000,
             "addr_no": "55",
