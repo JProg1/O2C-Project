@@ -30,9 +30,6 @@ export default function CustomerPage() {
                                 placeholder="Search"
                                 aria-label="Search"
                             />
-                            <Button variant="outline-secondary" id="button-addon2">
-                                Search
-                            </Button>
                             <Button variant="outline-primary" id="button-addon2">
                                 Add New
                             </Button>
@@ -57,9 +54,6 @@ export default function CustomerPage() {
                                 placeholder="Search"
                                 aria-label="Search"
                             />
-                            <Button variant="outline-secondary" id="button-addon2">
-                                Search
-                            </Button>
                             <Button variant="outline-primary" id="button-addon2">
                                 Add New
                             </Button>
