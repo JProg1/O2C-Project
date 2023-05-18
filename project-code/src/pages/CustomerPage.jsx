@@ -8,21 +8,44 @@ function findPropertiesCount(sellerID, propertyArray){
     var array = propertyArray.filter(prop => prop.cust_ref === sellerID);
     return array.length;
 }
+
 export default function CustomerPage() {
     const [buyerData, setBuyerData] = useState([]);
     const [sellerData, setSellerData] = useState([]);
     const [filteredBuyerData, setFilteredBuyerData] = useState([]);
     const [filteredSellerData, setFilteredSellerData] = useState([]);
     const [propertiesData, setPropertiesData] = useState([]);
+    const handleBuyerSearch = (event) => {
+        let criteria = event.target.value.toLowerCase();
+        var result = buyerData.filter(data => {
+            var comparison = `${data.id} ${data.first_name} ${data.surname} ${data.phone} ${data.email} ${data.addr_no} ${data.addr_line_1} ${data.addr_postcode} ${data.addr_town} ${data.budget}`;
+            return comparison.toLowerCase().includes(criteria);
+        });
+        setFilteredBuyerData(result);
+        if(criteria.trim() === ''){
+            setFilteredBuyerData(buyerData)
+        }
+    }
+    const handleSellerSearch = (event) => {
+        let criteria = event.target.value.toLowerCase();
+        var result = sellerData.filter(data => {
+            var comparison = `${data.id} ${data.first_name} ${data.surname} ${data.phone} ${data.email} ${data.addr_no} ${data.addr_line_1} ${data.addr_postcode} ${data.addr_town} ${data.budget}`;
+            return comparison.toLowerCase().includes(criteria);
+        });
+        setFilteredSellerData(result);
+        if(criteria.trim() === ''){
+            setFilteredSellerData(sellerData)
+        }
+    }
     useEffect(() => {
         fetch('http://localhost:3004/buyers')
         .then((response) => response.json())
-        .then((data) => setBuyerData(data));
+        .then((data) => {setBuyerData(data); setFilteredBuyerData(data)});
     }, []);
     useEffect(() => {
         fetch('http://localhost:3004/sellers')
         .then((response) => response.json())
-        .then((data) => setSellerData(data));
+        .then((data) => {setSellerData(data); setFilteredSellerData(data)});
     }, []);
     useEffect(() => {
         fetch('http://localhost:3004/properties')
@@ -42,6 +65,7 @@ export default function CustomerPage() {
                             <Form.Control
                                 placeholder="Search"
                                 aria-label="Search"
+                                onChange={(event) => handleBuyerSearch(event)}
                             />
                             <Button variant="outline-primary" id="button-addon2">
                                 Add New
@@ -49,7 +73,7 @@ export default function CustomerPage() {
                         </InputGroup>
                     </Row>
                     {/* Buyers list - add hovers and onClicks. */}
-                    {buyerData.map((item) => (
+                    {filteredBuyerData.map((item) => (
                         <Col>
                             <CustomerItem className="custItem" id={item.id}
                                 name={item.title + ' ' + item.first_name + ' ' + item.surname}
@@ -66,6 +90,7 @@ export default function CustomerPage() {
                             <Form.Control
                                 placeholder="Search"
                                 aria-label="Search"
+                                onChange={(event) => handleSellerSearch(event)}
                             />
                             <Button variant="outline-primary" id="button-addon2">
                                 Add New
@@ -73,7 +98,7 @@ export default function CustomerPage() {
                         </InputGroup>
                     </Row>
                     {/* Selers List */}
-                    {sellerData.map((item) => (
+                    {filteredSellerData.map((item) => (
                         <Col>
                             <CustomerItem id={item.id}
                                 name={item.title + ' ' + item.first_name + ' ' + item.surname}
