@@ -4,9 +4,16 @@ import './CustStyle.css';
 
 import CustomerItem from "../components/CustomerItem";
 // Homepage includes some react-bootstrap components to shape the page, introducing the bootstrap grid.
+function findPropertiesCount(sellerID, propertyArray){
+    var array = propertyArray.filter(prop => prop.cust_ref === sellerID);
+    return array.length;
+}
 export default function CustomerPage() {
     const [buyerData, setBuyerData] = useState([]);
     const [sellerData, setSellerData] = useState([]);
+    const [filteredBuyerData, setFilteredBuyerData] = useState([]);
+    const [filteredSellerData, setFilteredSellerData] = useState([]);
+    const [propertiesData, setPropertiesData] = useState([]);
     useEffect(() => {
         fetch('http://localhost:3004/buyers')
         .then((response) => response.json())
@@ -17,6 +24,12 @@ export default function CustomerPage() {
         .then((response) => response.json())
         .then((data) => setSellerData(data));
     }, []);
+    useEffect(() => {
+        fetch('http://localhost:3004/properties')
+        .then((response) => response.json())
+        .then((data) => setPropertiesData(data));
+    }, []);
+
     return (
         <div className="custPage">
             <Container>
@@ -66,7 +79,7 @@ export default function CustomerPage() {
                                 name={item.title + ' ' + item.first_name + ' ' + item.surname}
                                 address={item.addr_no + ' ' + item.addr_line_1 + ", " + item.addr_town + ', ' + item.addr_postcode}
                                 phone={item.phone}
-                                properties={item.seller_prop_links}
+                                properties={findPropertiesCount(item.id, propertiesData)}
                                 email={item.email}/>
                         </Col>
                     ))}
