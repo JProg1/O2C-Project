@@ -16,12 +16,19 @@ export default function CustomerItem({id, name, address, phone, email, buyer_bud
     return (
         <Card style={{marginBottom: 1 + 'em',color:'rgb(145,145,145)', textAlign:'left'}}>
         <Card.Body>
-            <Card.Title>[{id}] {name} {buyer_budget} {properties_display}
-            {isSeller ? null : <Button style={{float: "right"}} size="sm" variant="outline-danger">Delete</Button>}
-            {isSeller ? <Button style={{float: "right"}} size="sm" variant="outline-primary">View</Button> : <Button style={{float: "right", marginRight: 5 + "px"}} size="sm" variant="outline-primary">Edit</Button>}
+            <Card.Title>
+                <div style={{width:"80%"}}>
+                    [{id}] {name} {buyer_budget} {properties_display}
+                </div>
+                <div>
+                    {isSeller ? null : <Button style={{float: "right"}} size="sm" variant="outline-danger">Delete</Button>}
+                    {isSeller ? <Button style={{float: "right"}} size="sm" variant="outline-primary">View</Button> : <Button style={{float: "right", marginRight: 5 + "px"}} size="sm" variant="outline-primary">Edit</Button>}
+                </div>
             </Card.Title>
             <Card.Text>
-                {address} ~ {phone} ~ {email}
+                <div style={{width:"80%"}}>
+                    {address} ~ {phone} ~ {email}
+                </div>
             </Card.Text>
         </Card.Body>
         </Card>
