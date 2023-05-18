@@ -1,6 +1,7 @@
 import { Container, Form, Row, Tab, Tabs, Col, InputGroup, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import './CustStyle.css';
+import BuyerAdd from "../components/AddNewBuyer";
 
 import CustomerItem from "../components/CustomerItem";
 // Homepage includes some react-bootstrap components to shape the page, introducing the bootstrap grid.
@@ -56,7 +57,7 @@ export default function CustomerPage() {
     return (
         <div className="custPage">
             <Container>
-                <h2 style={{marginTop: 0.5 + 'em'}}>Customers</h2>
+                <h2 style={{marginTop: 0.5 + 'em'}}><strong>Customers</strong></h2>
                 <Row style={{marginTop: 1 + 'em'}}>
                 <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
                 <Tab style={{marginTop: 1 + 'em'}} eventKey={1} title="Buyers">
@@ -67,9 +68,9 @@ export default function CustomerPage() {
                                 aria-label="Search"
                                 onChange={(event) => handleBuyerSearch(event)}
                             />
-                            <Button variant="outline-primary" id="button-addon2">
-                                Add New
-                            </Button>
+                            {/* calls modal button */}
+                            <BuyerAdd />
+
                         </InputGroup>
                     </Row>
                     {/* Buyers list - add hovers and onClicks. */}
