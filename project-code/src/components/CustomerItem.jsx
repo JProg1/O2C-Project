@@ -10,7 +10,7 @@ export default function CustomerItem({id, name, address, phone, email, buyer_bud
     }
     if(properties != null){
         isSeller = true;
-        properties_display = "~ Properties: " + properties.length;
+        properties_display = "~ Properties: " + properties;
     }
     
     return (

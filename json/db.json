@@ -64,10 +64,7 @@
             "addr_no": "99",
             "addr_line_1": "Hogwarts Road",
             "addr_town": "Alnwick",
-            "addr_postcode": "PF9 3QT",
-            "seller_prop_links": [
-                1, 2
-            ]
+            "addr_postcode": "PF9 3QT"
         },
         {
             "id": 2,
@@ -79,10 +76,7 @@
             "addr_no": "998",
             "addr_line_1": "Prior Close",
             "addr_town": "Newcastle",
-            "addr_postcode": "NE1 1XY",
-            "seller_prop_links": [
-                4
-            ]
+            "addr_postcode": "NE1 1XY"
         }
     ],
     "properties": [
@@ -112,7 +106,7 @@
 
         {
             "id": 3,
-            "cust_ref": 3,
+            "cust_ref": 2,
             "status": "WITHDRAWN",
             "asking_price": 500000,
             "addr_no": "1",
