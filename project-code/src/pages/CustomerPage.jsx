@@ -1,4 +1,4 @@
-import { Container, Form, Row, Tab, Tabs, Col } from "react-bootstrap";
+import { Container, Form, Row, Tab, Tabs, Col, InputGroup, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import './CustStyle.css';
 
@@ -24,10 +24,19 @@ export default function CustomerPage() {
                 <Row style={{marginTop: 1 + 'em'}}>
                 <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
                 <Tab style={{marginTop: 1 + 'em'}} eventKey={1} title="Buyers">
-                    <Row style={{marginBottom: 1 + 'em'}}>
-                        <Form>
-                        <Form.Control type="text" placeholder="Search" />
-                        </Form>
+                    <Row style={{marginTop: 1 + 'em'}}>
+                        <InputGroup className="mb-3">
+                            <Form.Control
+                                placeholder="Search"
+                                aria-label="Search"
+                            />
+                            <Button variant="outline-secondary" id="button-addon2">
+                                Search
+                            </Button>
+                            <Button variant="outline-primary" id="button-addon2">
+                                Add New
+                            </Button>
+                        </InputGroup>
                     </Row>
                     {/* Buyers list - add hovers and onClicks. */}
                     {buyerData.map((item) => (
@@ -42,10 +51,19 @@ export default function CustomerPage() {
                     ))}
                 </Tab>
                 <Tab style={{marginTop: 1 + 'em'}} eventKey={2} title="Sellers">
-                    <Row style={{marginBottom: 1 + 'em'}}>
-                        <Form>
-                        <Form.Control type="text" placeholder="Search" />
-                        </Form>
+                    <Row style={{marginTop: 1 + 'em'}}>
+                        <InputGroup className="mb-3">
+                            <Form.Control
+                                placeholder="Search"
+                                aria-label="Search"
+                            />
+                            <Button variant="outline-secondary" id="button-addon2">
+                                Search
+                            </Button>
+                            <Button variant="outline-primary" id="button-addon2">
+                                Add New
+                            </Button>
+                        </InputGroup>
                     </Row>
                     {/* Selers List */}
                     {sellerData.map((item) => (
