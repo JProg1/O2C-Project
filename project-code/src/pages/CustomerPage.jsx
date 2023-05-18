@@ -16,26 +16,24 @@ export default function CustomerPage() {
     const [filteredSellerData, setFilteredSellerData] = useState([]);
     const [propertiesData, setPropertiesData] = useState([]);
     const handleBuyerSearch = (event) => {
-        let value = event.target.value.toLowerCase();
+        let criteria = event.target.value.toLowerCase();
         var result = buyerData.filter(data => {
-            var criteria = value.toLowerCase();
             var comparison = `${data.id} ${data.first_name} ${data.surname} ${data.phone} ${data.email} ${data.addr_no} ${data.addr_line_1} ${data.addr_postcode} ${data.addr_town}`;
             return comparison.toLowerCase().includes(criteria);
         });
         setFilteredBuyerData(result);
-        if(value.trim() === ''){
+        if(criteria.trim() === ''){
             setFilteredBuyerData(buyerData)
         }
     }
     const handleSellerSearch = (event) => {
-        let value = event.target.value.toLowerCase();
+        let criteria = event.target.value.toLowerCase();
         var result = sellerData.filter(data => {
-            var criteria = value.toLowerCase();
             var comparison = `${data.id} ${data.first_name} ${data.surname} ${data.phone} ${data.email} ${data.addr_no} ${data.addr_line_1} ${data.addr_postcode} ${data.addr_town}`;
             return comparison.toLowerCase().includes(criteria);
         });
         setFilteredSellerData(result);
-        if(value.trim() === ''){
+        if(criteria.trim() === ''){
             setFilteredSellerData(sellerData)
         }
     }
