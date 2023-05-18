@@ -34,6 +34,7 @@ export default function CustomerPage() {
                         <Col>
                             <CustomerItem className="custItem" id={item.id}
                                 name={item.title + ' ' + item.first_name + ' ' + item.surname}
+                                buyer_budget={item.buyer_budget}
                                 address={item.addr_no + ' ' + item.addr_line_1 + ", " + item.addr_town + ', ' + item.addr_postcode}
                                 phone={item.phone}
                                 email={item.email}/>
