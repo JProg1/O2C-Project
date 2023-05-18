@@ -1,3 +1,9 @@
 .custItem:hover {
     background-color: gray !important;
 }
+
+
+h2 {
+    color: rgb(94, 136, 151);
+    font-weight: bold;
+  }
