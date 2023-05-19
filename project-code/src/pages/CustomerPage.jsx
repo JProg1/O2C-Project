@@ -19,7 +19,7 @@ export default function CustomerPage() {
     const handleBuyerSearch = (event) => {
         let criteria = event.target.value.toLowerCase();
         var result = buyerData.filter(data => {
-            var comparison = `${data.id} ${data.first_name} ${data.surname} ${data.phone} ${data.email} ${data.addr_no} ${data.addr_line_1} ${data.addr_postcode} ${data.addr_town} ${data.budget}`;
+            var comparison = `${data.id} ${data.first_name} ${data.surname} ${data.phone} ${data.email} ${data.addr_no} ${data.addr_line_1} ${data.addr_postcode} ${data.addr_town} £${data.buyer_budget}`;
             return comparison.toLowerCase().includes(criteria);
         });
         setFilteredBuyerData(result);
@@ -30,7 +30,7 @@ export default function CustomerPage() {
     const handleSellerSearch = (event) => {
         let criteria = event.target.value.toLowerCase();
         var result = sellerData.filter(data => {
-            var comparison = `${data.id} ${data.first_name} ${data.surname} ${data.phone} ${data.email} ${data.addr_no} ${data.addr_line_1} ${data.addr_postcode} ${data.addr_town} ${data.budget}`;
+            var comparison = `${data.id} ${data.first_name} ${data.surname} ${data.phone} ${data.email} ${data.addr_no} ${data.addr_line_1} ${data.addr_postcode} ${data.addr_town}`;
             return comparison.toLowerCase().includes(criteria);
         });
         setFilteredSellerData(result);
