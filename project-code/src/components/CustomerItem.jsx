@@ -21,8 +21,8 @@ export default function CustomerItem({id, name, address, phone, email, buyer_bud
                     [{id}] {name} {buyer_budget} {properties_display}
                 </div>
                 <div>
-                    {isSeller ? null : <Button style={{float: "right"}} size="sm" variant="outline-danger">Delete</Button>}
-                    {isSeller ? <Button style={{float: "right"}} size="sm" variant="outline-primary">View</Button> : <Button style={{float: "right", marginRight: 5 + "px"}} size="sm" variant="outline-primary">Edit</Button>}
+                 <Button style={{float: "right"}} size="sm" variant="outline-danger">Delete</Button>
+                 <Button style={{float: "right", marginRight: 5 + "px"}} size="sm" variant="outline-primary">Edit</Button>
                 </div>
             </Card.Title>
             <Card.Text>
