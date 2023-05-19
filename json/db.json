@@ -113,7 +113,7 @@
             "addr_line_1": "Some Lane",
             "addr_town": "Someton",
             "addr_postcode": "AB12 2CD",
-            "image": "https://img.staticmb.com/mbcontent/images/uploads/2022/12/Most-Beautiful-House-in-the-World.jpg"
+            "image": "https://img.staticmb.com/mbcontent/images/uploads/2022/12/Most-Beautiful-House-in-the-World.jpg",
         },
 
         {
@@ -125,7 +125,12 @@
             "addr_line_1": "Another Street",
             "addr_town": "Anotherton",
             "addr_postcode": "BC34 5DE",
-            "image": "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGx1eHVyeSUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+            "image": "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGx1eHVyeSUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+            "type": "Detached",
+            "bedrooms": "3",
+            "bathrooms": "4",
+            "garden": "yes",
+            "garage": "yes"
         }
     ]
 }
