@@ -3,6 +3,17 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 function BuyerModal(props) {
+  const [inputs, setInputs] = useState({});
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs(values => ({...values, [name]: value}))
+  }
+
+  const handleSubmit = (event) => {
+    console.log(inputs); 
+  }
   return (
     
     <Modal
@@ -19,7 +30,7 @@ function BuyerModal(props) {
       </Modal.Header>
       <Modal.Body>
         <h4>Enter the required buyer data below</h4>
-        <form id="updateBuyer">
+        <form id="updateBuyer" onSubmit={handleSubmit}>
         <div className="border-b border-gray-900/10 pb-12">
           <p className="mt-1 text-sm leading-6 text-gray-600">Use the buyers current contact details in all instances.</p>
 
@@ -33,6 +44,7 @@ function BuyerModal(props) {
                   name="title"
                   autoComplete="buyer-title"
                   placeholder='Title'
+                  onChange={handleChange}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option disabled="true" selected required></option>
@@ -61,6 +73,7 @@ function BuyerModal(props) {
                   id="first-name"
                   autoComplete="given-name"
                   placeholder=' Given Name'
+                  onChange={handleChange}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -77,6 +90,7 @@ function BuyerModal(props) {
                   id="last-name"
                   autoComplete="family-name"
                   placeholder=' Family Name'
+                  onChange={handleChange}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -93,6 +107,7 @@ function BuyerModal(props) {
                   id="budget"
                   autoComplete="buyer-budget"
                   placeholder=' 250000'
+                  onChange={handleChange}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -109,6 +124,7 @@ function BuyerModal(props) {
                   id="no-name-address"
                   autoComplete="no-name-address"
                   placeholder=' Number/Name'
+                  onChange={handleChange}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -125,6 +141,7 @@ function BuyerModal(props) {
                   id="street-address"
                   autoComplete="street-address"
                   placeholder=' 1 Street Avenue'
+                  onChange={handleChange}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -141,6 +158,7 @@ function BuyerModal(props) {
                   id="city"
                   autoComplete="address-level2"
                   placeholder=' SomeTon'
+                  onChange={handleChange}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -157,6 +175,7 @@ function BuyerModal(props) {
                   id="region"
                   autoComplete="address-level1"
                   placeholder=' SomeTonShire'
+                  onChange={handleChange}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -173,6 +192,7 @@ function BuyerModal(props) {
                   id="postal-code"
                   autoComplete="postal-code"
                   placeholder=' AB12 3CD'
+                  onChange={handleChange}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -189,6 +209,7 @@ function BuyerModal(props) {
                   type="email"
                   autoComplete="email"
                   placeholder=' Anne.other@example.com'
+                  onChange={handleChange}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
