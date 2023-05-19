@@ -15,9 +15,9 @@ export default function PropertyPage() {
     return (
         <div className="propertyPage" style={{width: "70%"}}>
             <Container>
-                <h2 style={{marginTop: 0.5 + 'em'}}>Properties</h2>
+                <h2 style={{marginTop: 0.5 + 'em'}}><strong>Properties</strong></h2>
                 <Row style={{marginTop: 1 + 'em'}}>
-                        <Row style={{marginBottom: 1 + 'em'}}>
+                        <Row style={{marginBottom:"1rem"}}>
                         <Form>
                         <Form.Control type="text" placeholder="Search" />
                         </Form>
