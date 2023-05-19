@@ -8,12 +8,26 @@ function BuyerModal(props) {
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setInputs(values => ({...values, [name]: value}))
+    if(name == "buyer_budget"){
+      setInputs(values => ({...values, [name]: parseInt(value)}))
+    }else{
+      setInputs(values => ({...values, [name]: value}))
+    }
   }
 
   const handleSubmit = (event) => {
-    console.log(inputs); 
+    event.preventDefault();
+    fetch('http://localhost:3004/buyers', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(inputs)
+    })
+    .then((response) => {console.log(response); window.location.reload(false);}, (error) => console.log(error));   
+    
   }
+  // handleSubmit(null)
   return (
     
     <Modal
