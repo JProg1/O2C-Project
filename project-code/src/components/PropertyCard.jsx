@@ -12,7 +12,7 @@ export default function PropertyCard({id, cust_ref, address, status, asking_pric
                 Currently: <strong>{status}</strong> <br/> 
                 £{asking_price}.00 <br/>
                 Type: {type} <br/>
-                Beds: {bedrooms}; Baths: {bathrooms} <br/>
+                Beds: {bedrooms} ~ Baths: {bathrooms} <br/>
                 Garden: {garden} <br/>
                 Garage: {garage}
             </Card.Text>
