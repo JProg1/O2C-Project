@@ -2,7 +2,7 @@ import { Container, Form, Row, Tab, Tabs, Col, InputGroup, Button } from "react-
 import { useEffect, useState } from "react";
 import './CustStyle.css';
 import BuyerAdd from "../components/AddNewBuyer";
-
+import SellerAdd from "../components/AddNewSeller";
 import CustomerItem from "../components/CustomerItem";
 // Homepage includes some react-bootstrap components to shape the page, introducing the bootstrap grid.
 function findPropertiesCount(sellerID, propertyArray){
@@ -93,9 +93,7 @@ export default function CustomerPage() {
                                 aria-label="Search"
                                 onChange={(event) => handleSellerSearch(event)}
                             />
-                            <Button variant="outline-primary" id="button-addon2">
-                                Add New
-                            </Button>
+                            <SellerAdd/>
                         </InputGroup>
                     </Row>
                     {/* Selers List */}
