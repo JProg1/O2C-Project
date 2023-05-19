@@ -114,7 +114,7 @@ function SellerModal(props) {
                 House Number or Name
               </label>
               <div className="mt-2">
-                <input
+                <input 
                   type="text"
                   name="addr_no"
                   id="no-name-address"
