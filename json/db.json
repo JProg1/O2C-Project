@@ -1,136 +1,154 @@
 {
     "buyers": [
-        {
-            "id": 1,
-            "title": "Mr",
-            "first_name": "James",
-            "surname": "Johnson",
-            "email": "james@johnson.co.uk",
-            "phone": "07500657463",
-            "addr_no": "1",
-            "addr_line_1": "Address Lane",
-            "addr_town": "Towny",
-            "addr_postcode": "PO5 4DE",
-            "buyer_budget": 90000
-        },
-        {
-            "id": 2,
-            "title": "Mr",
-            "first_name": "Ralph",
-            "surname": "Rossin",
-            "email": "ralph@ralphnet.com",
-            "phone": "07500657463",
-            "addr_no": "77",
-            "addr_line_1": "Right Road",
-            "addr_town": "Rudolfvile",
-            "addr_postcode": "RO1 2RD",
-            "buyer_budget": 225000
-        },
-        {
-            "id": 3,
-            "title": "Miss",
-            "first_name": "Mary",
-            "surname": "Jane",
-            "email": "maryjane22@hotmail.com",
-            "phone": "07562274562",
-            "addr_no": "123",
-            "addr_line_1": "High Street",
-            "addr_town": "Blackpool",
-            "addr_postcode": "BO1 1AA",
-            "buyer_budget": 555000
-        }, 
-        {
-            "id": 4,
-            "title": "Ms",
-            "first_name": "Anne",
-            "surname": "Other",
-            "email": "Anne@other.com",
-            "phone": "07527527527",
-            "addr_no": "123",
-            "addr_line_1": "The Place",
-            "addr_town": "Atown",
-            "addr_postcode": "DC32 1BA",
-            "buyer_budget": 350000
-        }
+      {
+        "id": 1,
+        "title": "Mr",
+        "first_name": "James",
+        "surname": "Johnson",
+        "email": "james@johnson.co.uk",
+        "phone": "07500657463",
+        "addr_no": "1",
+        "addr_line_1": "Address Lane",
+        "addr_town": "Towny",
+        "addr_postcode": "PO5 4DE",
+        "buyer_budget": 90000
+      },
+      {
+        "id": 2,
+        "title": "Mr",
+        "first_name": "Ralph",
+        "surname": "Rossin",
+        "email": "ralph@ralphnet.com",
+        "phone": "07500657463",
+        "addr_no": "77",
+        "addr_line_1": "Right Road",
+        "addr_town": "Rudolfvile",
+        "addr_postcode": "RO1 2RD",
+        "buyer_budget": 225000
+      },
+      {
+        "id": 3,
+        "title": "Miss",
+        "first_name": "Mary",
+        "surname": "Jane",
+        "email": "maryjane22@hotmail.com",
+        "phone": "07562274562",
+        "addr_no": "123",
+        "addr_line_1": "High Street",
+        "addr_town": "Blackpool",
+        "addr_postcode": "BO1 1AA",
+        "buyer_budget": 555000
+      },
+      {
+        "id": 4,
+        "title": "Ms",
+        "first_name": "Anne",
+        "surname": "Other",
+        "email": "Anne@other.com",
+        "phone": "07527527527",
+        "addr_no": "123",
+        "addr_line_1": "The Place",
+        "addr_town": "Atown",
+        "addr_postcode": "DC32 1BA",
+        "buyer_budget": 350000
+      },
+      {
+        "title": "Miss",
+        "first_name": "Test",
+        "surname": "User",
+        "buyer_budget": 2222222,
+        "addr_no": "1",
+        "addr_line_1": "Test Street",
+        "addr_town": "Test City",
+        "addr_postcode": "AB12 2AA",
+        "phone": "07500923635",
+        "email": "test@test.com",
+        "id": 5
+      },
+      {
+        "title": "Dame",
+        "first_name": "Rolf",
+        "surname": "Dork",
+        "buyer_budget": 25000,
+        "addr_no": "1",
+        "addr_line_1": "Hartford Street",
+        "addr_town": "Towne",
+        "addr_postcode": "AB12 2AA",
+        "phone": "07500923635",
+        "email": "test@test.com",
+        "id": 6
+      }
     ],
     "sellers": [
-        {
-            "id": 1,
-            "title": "Mr",
-            "first_name": "Harry",
-            "surname": "Potter",
-            "email": "potter@hogwarts.com",
-            "phone": "09876543212",
-            "addr_no": "99",
-            "addr_line_1": "Hogwarts Road",
-            "addr_town": "Alnwick",
-            "addr_postcode": "PF9 3QT"
-        },
-        {
-            "id": 2,
-            "title": "Mrs",
-            "first_name": "Patrica",
-            "surname": "Johnson",
-            "email": "pat@johnson.co.uk",
-            "phone": "07677284648",
-            "addr_no": "998",
-            "addr_line_1": "Prior Close",
-            "addr_town": "Newcastle",
-            "addr_postcode": "NE1 1XY"
-        }
+      {
+        "id": 1,
+        "title": "Mr",
+        "first_name": "Harry",
+        "surname": "Potter",
+        "email": "potter@hogwarts.com",
+        "phone": "09876543212",
+        "addr_no": "99",
+        "addr_line_1": "Hogwarts Road",
+        "addr_town": "Alnwick",
+        "addr_postcode": "PF9 3QT"
+      },
+      {
+        "id": 2,
+        "title": "Mrs",
+        "first_name": "Patrica",
+        "surname": "Johnson",
+        "email": "pat@johnson.co.uk",
+        "phone": "07677284648",
+        "addr_no": "998",
+        "addr_line_1": "Prior Close",
+        "addr_town": "Newcastle",
+        "addr_postcode": "NE1 1XY"
+      }
     ],
     "properties": [
-        {
-            "id": 1,
-            "cust_ref": 1,
-            "status": "FOR SALE",
-            "asking_price": 125000,
-            "addr_no": "54",
-            "addr_line_1": "Referee Lane",
-            "addr_town": "Toon",
-            "addr_postcode": "PO5 4DE",
-            "image": "https://media.istockphoto.com/id/1385461774/photo/colorful-english-houses-facades-pastel-pale-colors-in-london.jpg?s=612x612&w=0&k=20&c=VuSQbczC2O6nqGWYERKOv5XQYElTeSjsVOnCWM5KyZs="
-        },
-
-        {
-            "id": 2,
-            "cust_ref": 1,
-            "status": "SOLD",
-            "asking_price": 15000,
-            "addr_no": "55",
-            "addr_line_1": "Referee Lane",
-            "addr_town": "Toon",
-            "addr_postcode": "PO5 4DE",
-            "image": "https://media.istockphoto.com/id/104833709/photo/english-homes.jpg?s=612x612&w=0&k=20&c=bSrI4QusZe3yXMIksMcwcMKbIL8Pzro-jv_8t_pnfB0="
-        },
-
-        {
-            "id": 3,
-            "cust_ref": 2,
-            "status": "WITHDRAWN",
-            "asking_price": 500000,
-            "addr_no": "1",
-            "addr_line_1": "Some Lane",
-            "addr_town": "Someton",
-            "addr_postcode": "AB12 2CD",
-            "image": "https://img.staticmb.com/mbcontent/images/uploads/2022/12/Most-Beautiful-House-in-the-World.jpg",
-        },
-
-        {
-            "id": 4,
-            "cust_ref": 2,
-            "status": "SOLD",
-            "asking_price": 450000,
-            "addr_no": "2",
-            "addr_line_1": "Another Street",
-            "addr_town": "Anotherton",
-            "addr_postcode": "BC34 5DE",
-            "image": "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGx1eHVyeSUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-            "type": "Detached",
-            "bedrooms": "3",
-            "bathrooms": "4",
-            "garden": "yes",
-            "garage": "yes"
-        }
+      {
+        "id": 1,
+        "cust_ref": 1,
+        "status": "FOR SALE",
+        "asking_price": 125000,
+        "addr_no": "54",
+        "addr_line_1": "Referee Lane",
+        "addr_town": "Toon",
+        "addr_postcode": "PO5 4DE",
+        "image": "https://media.istockphoto.com/id/1385461774/photo/colorful-english-houses-facades-pastel-pale-colors-in-london.jpg?s=612x612&w=0&k=20&c=VuSQbczC2O6nqGWYERKOv5XQYElTeSjsVOnCWM5KyZs="
+      },
+      {
+        "id": 2,
+        "cust_ref": 1,
+        "status": "SOLD",
+        "asking_price": 15000,
+        "addr_no": "55",
+        "addr_line_1": "Referee Lane",
+        "addr_town": "Toon",
+        "addr_postcode": "PO5 4DE",
+        "image": "https://media.istockphoto.com/id/104833709/photo/english-homes.jpg?s=612x612&w=0&k=20&c=bSrI4QusZe3yXMIksMcwcMKbIL8Pzro-jv_8t_pnfB0="
+      },
+      {
+        "id": 3,
+        "cust_ref": 2,
+        "status": "WITHDRAWN",
+        "asking_price": 500000,
+        "addr_no": "1",
+        "addr_line_1": "Some Lane",
+        "addr_town": "Someton",
+        "addr_postcode": "AB12 2CD",
+        "image": "https://img.staticmb.com/mbcontent/images/uploads/2022/12/Most-Beautiful-House-in-the-World.jpg"
+      },
+      {
+        "id": 4,
+        "cust_ref": 2,
+        "status": "SOLD",
+        "asking_price": 450000,
+        "addr_no": "2",
+        "addr_line_1": "Another Street",
+        "addr_town": "Anotherton",
+        "addr_postcode": "BC34 5DE",
+        "image": "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGx1eHVyeSUyMGhvdXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+      }
     ]
-}
+  }
