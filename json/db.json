@@ -89,7 +89,12 @@
             "addr_line_1": "Referee Lane",
             "addr_town": "Toon",
             "addr_postcode": "PO5 4DE",
-            "image": "https://media.istockphoto.com/id/1385461774/photo/colorful-english-houses-facades-pastel-pale-colors-in-london.jpg?s=612x612&w=0&k=20&c=VuSQbczC2O6nqGWYERKOv5XQYElTeSjsVOnCWM5KyZs="
+            "image": "https://media.istockphoto.com/id/1385461774/photo/colorful-english-houses-facades-pastel-pale-colors-in-london.jpg?s=612x612&w=0&k=20&c=VuSQbczC2O6nqGWYERKOv5XQYElTeSjsVOnCWM5KyZs=",
+            "type": "Detached",
+            "bedrooms": "3",
+            "bathrooms": "4",
+            "garden": "yes",
+            "garage": "yes"
         },
 
         {
@@ -101,7 +106,12 @@
             "addr_line_1": "Referee Lane",
             "addr_town": "Toon",
             "addr_postcode": "PO5 4DE",
-            "image": "https://media.istockphoto.com/id/104833709/photo/english-homes.jpg?s=612x612&w=0&k=20&c=bSrI4QusZe3yXMIksMcwcMKbIL8Pzro-jv_8t_pnfB0="
+            "image": "https://media.istockphoto.com/id/104833709/photo/english-homes.jpg?s=612x612&w=0&k=20&c=bSrI4QusZe3yXMIksMcwcMKbIL8Pzro-jv_8t_pnfB0=",
+            "type": "Detached",
+            "bedrooms": "3",
+            "bathrooms": "4",
+            "garden": "yes",
+            "garage": "yes"
         },
 
         {
@@ -114,6 +124,11 @@
             "addr_town": "Someton",
             "addr_postcode": "AB12 2CD",
             "image": "https://img.staticmb.com/mbcontent/images/uploads/2022/12/Most-Beautiful-House-in-the-World.jpg",
+            "type": "Detached",
+            "bedrooms": "3",
+            "bathrooms": "4",
+            "garden": "yes",
+            "garage": "yes"
         },
 
         {
