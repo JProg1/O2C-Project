@@ -13,7 +13,7 @@ export default function HomePage() {
             </div> 
 
         <div>
-            <img src="https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width="450px" alt="Plant" />
+            <img src="https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width="450px" alt="KeysInDoor" />
         </div>
 
 </div>

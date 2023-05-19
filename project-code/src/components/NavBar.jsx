@@ -8,6 +8,7 @@ function NavBar() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
+        <a href="/"><img src="./icons8-real-estate-cute-color-96.png" alt="House" height={100} /></a>
         <Navbar.Brand href="/"><h1 className='siteLogo'>Op Prop</h1></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
