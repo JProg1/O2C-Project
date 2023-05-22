@@ -11,11 +11,14 @@ function findPropertiesCount(sellerID, propertyArray){
 }
 
 export default function CustomerPage() {
+    // Array variables to store all relevant data
     const [buyerData, setBuyerData] = useState([]);
     const [sellerData, setSellerData] = useState([]);
     const [filteredBuyerData, setFilteredBuyerData] = useState([]);
     const [filteredSellerData, setFilteredSellerData] = useState([]);
     const [propertiesData, setPropertiesData] = useState([]);
+
+    // Wildcard search functionality - compares actively the search criteria to a string built from the json data.
     const handleBuyerSearch = (event) => {
         let criteria = event.target.value.toLowerCase();
         var result = buyerData.filter(data => {
@@ -38,6 +41,8 @@ export default function CustomerPage() {
             setFilteredSellerData(sellerData)
         }
     }
+
+    // Fetches for the data we need for this page
     useEffect(() => {
         fetch('http://localhost:3004/buyers')
         .then((response) => response.json())
@@ -48,6 +53,7 @@ export default function CustomerPage() {
         .then((response) => response.json())
         .then((data) => {setSellerData(data); setFilteredSellerData(data)});
     }, []);
+    // Fetching property data to build a count of properties linked to each seller.
     useEffect(() => {
         fetch('http://localhost:3004/properties')
         .then((response) => response.json())
@@ -62,6 +68,7 @@ export default function CustomerPage() {
                 <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
                 <Tab style={{marginTop: 1 + 'em'}} eventKey={1} title="Buyers">
                     <Row style={{marginTop: 1 + 'em'}}>
+                        {/* Search Form - onChange event used for active filtering of CustomerItem */}
                         <InputGroup className="mb-3">
                             <Form.Control
                                 placeholder="Search"
@@ -76,6 +83,8 @@ export default function CustomerPage() {
                     {/* Buyers list - add hovers and onClicks. */}
                     {filteredBuyerData.map((item) => (
                         <Col>
+                        {/* We map out the filteredBuyerData (which ensures search functionality) and pass data to the CustomerItem
+                            We build inline strings here to display the card exactly as we want, we plan to move the building of these strings to the component itself. */}
                             <CustomerItem className="custItem" id={item.id}
                                 name={item.title + ' ' + item.first_name + ' ' + item.surname}
                                 buyer_budget={item.buyer_budget.toLocaleString()}
@@ -85,6 +94,7 @@ export default function CustomerPage() {
                         </Col>
                     ))}
                 </Tab>
+                {/* Sellers Tab - this behaves the same was as the Buyer tab but with different strings built. */}
                 <Tab style={{marginTop: 1 + 'em'}} eventKey={2} title="Sellers">
                     <Row style={{marginTop: 1 + 'em'}}>
                         <InputGroup className="mb-3">
@@ -103,6 +113,7 @@ export default function CustomerPage() {
                                 name={item.title + ' ' + item.first_name + ' ' + item.surname}
                                 address={item.addr_no + ' ' + item.addr_line_1 + ", " + item.addr_town + ', ' + item.addr_postcode}
                                 phone={item.phone}
+                                // We use the findPropertiesCount functon to compare how many properties have this sellers ID.
                                 properties={findPropertiesCount(item.id, propertiesData)}
                                 email={item.email}/>
                         </Col>
