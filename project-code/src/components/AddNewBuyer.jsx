@@ -8,13 +8,14 @@ function BuyerModal(props) {
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    if(name == "buyer_budget"){
+    if(event.target.type == "number"){
       setInputs(values => ({...values, [name]: parseInt(value)}))
     }else{
       setInputs(values => ({...values, [name]: value}))
     }
   }
 
+  // Handle submit event, which pushes the data to the JSON-Server and prevents refresh of page until it's done processing.
   const handleSubmit = (event) => {
     event.preventDefault();
     fetch('http://localhost:3004/buyers', {
@@ -27,7 +28,6 @@ function BuyerModal(props) {
     .then((response) => {console.log(response); window.location.reload(false);}, (error) => console.log(error));   
     
   }
-  // handleSubmit(null)
   return (
     
     <Modal
