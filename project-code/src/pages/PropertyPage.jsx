@@ -1,4 +1,4 @@
-import { Container, Row, Col, Form, InputGroup,button, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, InputGroup } from "react-bootstrap";
 import './PropertyStyle.css';
 import { useEffect, useState } from "react";
 import PropertyCard from '../components/PropertyCard';
@@ -7,10 +7,22 @@ import PropertyAdd from "../components/AddNewProperty";
 // Homepage includes some react-bootstrap components to shape the page, introducing the bootstrap grid.
 export default function PropertyPage() {
     const [propertiesData, setPropertiesData] = useState([]);
+    const [filteredPropertiesData, setFilteredPropertiesData] = useState([]);
+    const handleSearch = (event) => {
+        let criteria = event.target.value.toLowerCase();
+        var result = filteredPropertiesData.filter(data => {
+            var comparison = `${data.id} ${data.cust_ref} ${data.addr_no} ${data.addr_line_1} ${data.addr_postcode} ${data.addr_town} £${data.type} ${data.status}`;
+            return comparison.toLowerCase().includes(criteria);
+        });
+        setFilteredPropertiesData(result);
+        if(criteria.trim() === ''){
+            setFilteredPropertiesData(propertiesData)
+        }
+    }
     useEffect(() => {
         fetch('http://localhost:3004/properties')
         .then((response) => response.json())
-        .then((data) => setPropertiesData(data));
+        .then((data) => {setPropertiesData(data); setFilteredPropertiesData(data)});
     }, []);
     
     return (
@@ -20,6 +32,7 @@ export default function PropertyPage() {
                 <Row style={{marginTop: 1 + 'em'}}>
                 <InputGroup className="mb-3">
                             <Form.Control
+                                onChange={handleSearch}
                                 placeholder="Search"
                                 aria-label="Search"
                             />
@@ -27,7 +40,7 @@ export default function PropertyPage() {
                             <PropertyAdd />
 
                         </InputGroup>
-                        {propertiesData.map((item) => (
+                        {filteredPropertiesData.map((item) => (
                         <Col>
                             <PropertyCard className="properyCard" id={item.id}
                                 image={item.image}
