@@ -15,32 +15,32 @@ export default function PropertyPage() {
             return comparison.toLowerCase().includes(criteria);
         });
         setFilteredPropertiesData(result);
-        if(criteria.trim() === ''){
+        if (criteria.trim() === '') {
             setFilteredPropertiesData(propertiesData)
         }
     }
     useEffect(() => {
         fetch('http://localhost:3004/properties')
-        .then((response) => response.json())
-        .then((data) => {setPropertiesData(data); setFilteredPropertiesData(data)});
+            .then((response) => response.json())
+            .then((data) => { setPropertiesData(data); setFilteredPropertiesData(data) });
     }, []);
-    
+
     return (
         <div className="propertyPage">
             <Container>
-                <h2 style={{marginTop: 0.5 + 'em'}}><strong>Properties</strong></h2>
-                <Row style={{marginTop: 1 + 'em'}}>
-                <InputGroup className="mb-3">
-                            <Form.Control
-                                onChange={handleSearch}
-                                placeholder="Search"
-                                aria-label="Search"
-                            />
-                            {/* calls modal button */}
-                            <PropertyAdd />
+                <h2 style={{ marginTop: 0.5 + 'em' }}><strong>Properties</strong></h2>
+                <Row style={{ marginTop: 1 + 'em' }}>
+                    <InputGroup className="mb-3">
+                        <Form.Control
+                            onChange={handleSearch}
+                            placeholder="Search"
+                            aria-label="Search"
+                        />
+                        {/* calls modal button */}
+                        <PropertyAdd />
 
-                        </InputGroup>
-                        {filteredPropertiesData.map((item) => (
+                    </InputGroup>
+                    {filteredPropertiesData.map((item) => (
                         <Col>
                             <PropertyCard className="properyCard" id={item.id}
                                 image={item.image}

@@ -15,6 +15,7 @@ function BuyerModal(props) {
     }
   }
 
+  // Handle submit event, which pushes the data to the JSON-Server and prevents refresh of page until it's done processing.
   const handleSubmit = (event) => {
     event.preventDefault();
     fetch('http://localhost:3004/buyers', {
@@ -27,7 +28,6 @@ function BuyerModal(props) {
     .then((response) => {console.log(response); window.location.reload(false);}, (error) => console.log(error));   
     
   }
-  // handleSubmit(null)
   return (
     
     <Modal
