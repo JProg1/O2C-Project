@@ -8,7 +8,11 @@ function PropertyModal(props) {
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setInputs(values => ({...values, [name]: value}))
+    if(event.target.type == "number"){
+      setInputs(values => ({...values, [name]: parseInt(value)}))
+    }else{
+      setInputs(values => ({...values, [name]: value}))
+    }
   }
 
   const handleSubmit = (event) => {

@@ -8,7 +8,7 @@ function BuyerModal(props) {
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    if(name == "buyer_budget"){
+    if(event.target.type == "number"){
       setInputs(values => ({...values, [name]: parseInt(value)}))
     }else{
       setInputs(values => ({...values, [name]: value}))
