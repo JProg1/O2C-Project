@@ -11,7 +11,7 @@ export default function PropertyPage() {
     const handleSearch = (event) => {
         let criteria = event.target.value.toLowerCase();
         var result = filteredPropertiesData.filter(data => {
-            var comparison = `${data.id} ${data.cust_ref} ${data.addr_no} ${data.addr_line_1} ${data.addr_postcode} ${data.addr_town} £${data.type} ${data.status}`;
+            var comparison = `${data.id} ${data.asking_price} ${data.cust_ref} ${data.addr_no} ${data.addr_line_1} ${data.addr_postcode} ${data.addr_town} £${data.type} ${data.status}`;
             return comparison.toLowerCase().includes(criteria);
         });
         setFilteredPropertiesData(result);
