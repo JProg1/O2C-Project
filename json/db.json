@@ -158,7 +158,7 @@
       "id": 4,
       "cust_ref": 2,
       "status": "SOLD",
-     "asking_price": 450000,
+      "asking_price": 450000,
       "addr_no": "2",
       "addr_line_1": "Another Street",
       "addr_town": "Anotherton",
@@ -174,7 +174,7 @@
       "bedrooms": "1",
       "image": "https://cdn.home-designing.com/wp-content/uploads/2015/10/wood-paneling-apartment.jpg",
       "cust_ref": "3",
-      "asking_price": 150000,
+      "asking_price": "150000",
       "addr_no": "2",
       "addr_line_1": "The Flat",
       "addr_town": "InTown",
@@ -185,6 +185,22 @@
       "garden": "No",
       "garage": "No",
       "id": 5
+    },
+    {
+      "cust_ref": 1,
+      "asking_price": 280000,
+      "addr_no": "15",
+      "addr_line_1": "Low Road",
+      "addr_town": "Shorton",
+      "addr_postcode": "CD12 3BA",
+      "status": "FOR SALE",
+      "type": "Bungalow",
+      "bedrooms": "2",
+      "bathrooms": "1",
+      "garden": "Yes",
+      "garage": "No",
+      "image": "https://lid.zoocdn.com/645/430/5f7b39551041fae921d16a887fc7899848ec0d0e.jpg",
+      "id": 6
     }
   ]
 }
