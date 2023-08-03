@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import "./InputStyles.css";
 
 function PropertyModal(props) {
   const [inputs, setInputs] = useState({});
@@ -342,8 +343,6 @@ function PropertyModal(props) {
 
             </div>
           </div>
-
-
         </form>
       </Modal.Body>
       <Modal.Footer>
@@ -373,7 +372,7 @@ export default function PropertyAdd() {
 
   return (
     <>
-
+    
       <Button variant="outline-primary" id="button-addon2" onClick={() => setModalShow(true)}>
         Add New
       </Button>
