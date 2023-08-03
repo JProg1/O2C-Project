@@ -43,6 +43,7 @@ export default function PropertyPage() {
                     {filteredPropertiesData.map((item) => (
                         <Col>
                             <PropertyCard className="properyCard" id={item.id}
+                                propObj={item}
                                 image={item.image}
                                 cust_ref={item.customer_ref}
                                 status={item.status}
