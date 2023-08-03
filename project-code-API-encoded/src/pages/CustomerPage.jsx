@@ -9,8 +9,11 @@ function findPropertiesCount(sellerID, propertyArray) {
     var array = propertyArray.filter(prop => prop.customer_ref === sellerID);
     return array.length;
 }
-
+const storeSelection = (selection) => { localStorage.setItem('tabSelection', selection); console.log(localStorage.getItem('tabSelection')) };
 export default function CustomerPage() {
+    if(localStorage.getItem('tabSelection') == null){
+        storeSelection(1);
+    }
     // Array variables to store all relevant data
     const [buyerData, setBuyerData] = useState([]);
     const [sellerData, setSellerData] = useState([]);
@@ -67,7 +70,7 @@ export default function CustomerPage() {
             <Container>
                 <h2 style={{ marginTop: 0.5 + 'em' }}><strong>Customers</strong></h2>
                 <Row style={{ marginTop: 1 + 'em' }}>
-                    <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
+                    <Tabs defaultActiveKey={localStorage.getItem('tabSelection')} onSelect={storeSelection} id="uncontrolled-tab-example">
                         <Tab style={{ marginTop: 1 + 'em' }} eventKey={1} title="Buyers">
                             <Row style={{ marginTop: 1 + 'em' }}>
                                 {/* Search Form - onChange event used for active filtering of CustomerItem */}
