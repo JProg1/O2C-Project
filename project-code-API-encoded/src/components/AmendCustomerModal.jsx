@@ -1,17 +1,41 @@
 import { useState, useEffect } from 'react';
+import { PencilFill } from 'react-bootstrap-icons';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-export default function AmendBuyerModal(propObj) {
-    // if(propObj != null){
-        propObj = propObj.propObj;
-    // }
-    // console.log(propObj.propObj);
+import SellerAdd from './AddNewSeller';
+
+function BudgetObject(props){
+  return (
+    <div className="sm:col-span-2 sm:col-start-5">
+    <label htmlFor="budget" className="block text-sm font-medium leading-6 text-gray-900">
+      Budget
+    </label>
+    <div className="mt-2">
+      <input
+        type="number"
+        name="buyer_budget"
+        id="budget"
+        autoComplete="buyer-budget"
+        placeholder=' 250000'
+        defaultValue={props.buyer_budget}
+        required
+        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+      />
+    </div>
+  </div>
+  );
+}
+
+export default function AmendModal(props) {
+  var propObj = props.propObj;
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  var isBuyer = false;
   const [inputs, setInputs] = useState({});
-
+  if(props.sendType == "Buyer"){
+    isBuyer = true;
+  }
 // Date functionality for logs when in use.
 //   const commitDate = new Date();
 //   let day = commitDate.getDate();
@@ -21,7 +45,7 @@ export default function AmendBuyerModal(propObj) {
 
   const handleChange = () => {
 
-    var elements = document.getElementById("updateBuyer").elements;
+    var elements = document.getElementById("updateForm").elements;
 
     for (var i = 0; i < elements.length; i++) {
       const name = elements[i].name;
@@ -34,13 +58,13 @@ export default function AmendBuyerModal(propObj) {
     }
   }
 
+
   const updateCard = (event) => {
     event.preventDefault();
 
-    handleChange();
-    
+
     var entryID = event.target.id;
-    fetch('http://127.0.0.1:9002/buyers/' + entryID, {
+    fetch(`http://127.0.0.1:9002/${props.sendType.toString().toLowerCase()}s/${entryID}`, {
       method: 'PUT',
       headers: {
         'Content-type': 'application/json'
@@ -55,7 +79,9 @@ export default function AmendBuyerModal(propObj) {
 
   return (
     <>
-    <Button onClick={handleShow} style={{ float: "right", marginRight: 5 + "px" }} size="sm" variant="outline-primary">Edit</Button>
+      <Button onClick={handleShow} variant="success" className="float-right"><PencilFill /></Button>
+
+      {/* <Button onClick={handleShow} size="sm" variant="outline-primary">Edit</Button> */}
 
       <Modal
         show={show}
@@ -65,13 +91,13 @@ export default function AmendBuyerModal(propObj) {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Update Existing Buyer</Modal.Title>
+          <Modal.Title>Update Customer - {propObj.title} {propObj.first_name} {propObj.surname}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div>
-            <form id="updateBuyer" action="" >
+            <form id="updateForm" action="" >
             <div className="border-b border-gray-900/10 pb-12">
-          <p className="mt-1 text-sm leading-6 text-gray-600">Use the buyers current contact details in all instances. <br/>
+          <p className="mt-1 text-sm leading-6 text-gray-600">Use the current contact details in all instances. <br/>
           <em><strong>All fields must completed.</strong></em></p>
 
 
@@ -103,24 +129,7 @@ export default function AmendBuyerModal(propObj) {
                 </select>
               </div>
             </div>
-          <div className="sm:col-span-2 sm:col-start-5">
-              <label htmlFor="budget" className="block text-sm font-medium leading-6 text-gray-900">
-                Budget
-              </label>
-              <div className="mt-2">
-                <input
-                  type="number"
-                  name="buyer_budget"
-                  id="budget"
-                  autoComplete="buyer-budget"
-                  placeholder=' 250000'
-                  onChange={handleChange}
-                  defaultValue={propObj.buyer_budget}
-                  required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
+            { isBuyer ? <BudgetObject buyer_budget={propObj.buyer_budget} /> : <div className="sm:col-span-2 sm:col-start-5"></div>}
             <div className="sm:col-span-3">
               <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
                 First name
@@ -304,7 +313,7 @@ export default function AmendBuyerModal(propObj) {
           <Button variant="secondary" onClick={handleClose}>
             Cancel
           </Button>
-          <Button variant="success" onClick={updateCard} id={propObj.id}>Update
+          <Button variant="success" onClick={updateCard} onMouseDown={handleChange} id={propObj.id}>Update
           </Button>
         </Modal.Footer>
       </Modal>

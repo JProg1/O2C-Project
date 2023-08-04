@@ -41,7 +41,17 @@ export default function AmendPropertyModal(propObj) {
 
   const updateCard = (event) => {
     event.preventDefault();
-    handleChange();
+    var elements = document.getElementById("updateProperty").elements;
+
+    for (var i = 0; i < elements.length; i++) {
+      const name = elements[i].name;
+      const value = elements[i].value;
+      if (elements[i].type == "number") {
+        setInputs(values => ({ ...values, [name]: parseInt(value) }))
+      } else {
+        setInputs(values => ({ ...values, [name]: value }))
+      }
+    }
     var entryID = event.target.id;
     fetch('http://127.0.0.1:9002/properties/' + entryID, {
       method: 'PUT',
@@ -387,7 +397,7 @@ export default function AmendPropertyModal(propObj) {
           <Button variant="secondary" onClick={handleClose}>
             Cancel
           </Button>
-          <Button variant="success" onClick={updateCard} id={propObj.id}>Update
+          <Button variant="success" onClick={updateCard} onMouseDown={handleChange} id={propObj.id}>Update
           </Button>
         </Modal.Footer>
       </Modal>
