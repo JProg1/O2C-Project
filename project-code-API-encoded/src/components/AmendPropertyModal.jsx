@@ -397,7 +397,7 @@ export default function AmendPropertyModal(propObj) {
           <Button variant="secondary" onClick={handleClose}>
             Cancel
           </Button>
-          <Button variant="success" onClick={updateCard} id={propObj.id}>Update
+          <Button variant="success" onClick={updateCard} onMouseDown={handleChange} id={propObj.id}>Update
           </Button>
         </Modal.Footer>
       </Modal>
