@@ -1,6 +1,5 @@
 import { Button, Card } from "react-bootstrap";
-import AmendBuyerModal from "./AmendBuyerModal";
-import AmendSellerModal from "./AmendSellerModal";
+import AmendCustomerModal from "./AmendCustomerModal";
 // Will import from JSON as this item will be mapped
 export default function CustomerItem({ id, name, address, phone, email, buyer_budget, properties, propObj }) {
     var properties_display = "";
@@ -24,7 +23,7 @@ export default function CustomerItem({ id, name, address, phone, email, buyer_bu
                     </div>
                     <div>
                         <Button style={{ float: "right" }} size="sm" variant="outline-danger">Delete</Button>
-                        {seller ? <AmendSellerModal propObj={propObj}/> : <AmendBuyerModal propObj={propObj} />}
+                        <AmendCustomerModal propObj={propObj} type={seller ? "Seller" : "Buyer"} data={name}/>
                     </div>
                 </Card.Title>
                 <Card.Text>
