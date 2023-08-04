@@ -1,9 +1,13 @@
 import { Button, Card } from "react-bootstrap";
+import AmendBuyerModal from "./AmendBuyerModal";
+import AmendSellerModal from "./AmendSellerModal";
 // Will import from JSON as this item will be mapped
-export default function CustomerItem({ id, name, address, phone, email, buyer_budget, properties }) {
+export default function CustomerItem({ id, name, address, phone, email, buyer_budget, properties, propObj }) {
     var properties_display = "";
+    var seller = false;
     if (buyer_budget == null) {
         buyer_budget = "";
+        seller = true;
     } else {
         buyer_budget = "~ Budget: £" + buyer_budget.toLocaleString("en-GB");
     }
@@ -20,7 +24,7 @@ export default function CustomerItem({ id, name, address, phone, email, buyer_bu
                     </div>
                     <div>
                         <Button style={{ float: "right" }} size="sm" variant="outline-danger">Delete</Button>
-                        <Button style={{ float: "right", marginRight: 5 + "px" }} size="sm" variant="outline-primary">Edit</Button>
+                        {seller ? <AmendSellerModal propObj={propObj}/> : <AmendBuyerModal propObj={propObj} />}
                     </div>
                 </Card.Title>
                 <Card.Text>

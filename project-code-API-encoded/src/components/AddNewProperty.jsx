@@ -71,9 +71,10 @@ function PropertyModal(props) {
                     autoComplete="customer_ref"
                     placeholder='customer reference'
                     onChange={handleChange}
+                    required
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                   >
-                    <option disabled="true" selected required></option>
+                    <option disabled="true" selected></option>
                     {sellerData.map((item) => (
                       <option value={item.id}>{item.id} - {item.surname}, {item.first_name}</option>
                     ))}
@@ -200,9 +201,10 @@ function PropertyModal(props) {
                     autoComplete="status"
                     placeholder='property status'
                     onChange={handleChange}
+                    required
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                   >
-                    <option disabled="true" selected required></option>
+                    <option disabled="true" selected></option>
                     <option>FOR SALE</option>
                     <option>WITHDRAWN</option>
                     <option>SOLD</option>
@@ -221,9 +223,10 @@ function PropertyModal(props) {
                     autoComplete="type"
                     placeholder='property type'
                     onChange={handleChange}
+                    required
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                   >
-                    <option disabled="true" selected required></option>
+                    <option disabled="true" selected></option>
                     <option>Detached</option>
                     <option>Semi</option>
                     <option>Bungalow</option>
@@ -244,10 +247,11 @@ function PropertyModal(props) {
                     name="bedrooms"
                     autoComplete="bedrooms"
                     placeholder='bedrooms'
+                    required
                     onChange={handleChange}
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                   >
-                    <option disabled="true" selected required></option>
+                    <option disabled="true"></option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -268,10 +272,11 @@ function PropertyModal(props) {
                     name="bathrooms"
                     autoComplete="bathrooms"
                     placeholder='bathrooms'
+                    required
                     onChange={handleChange}
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                   >
-                    <option disabled="true" selected required></option>
+                    <option disabled="true" selected></option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -292,9 +297,10 @@ function PropertyModal(props) {
                     autoComplete="garden"
                     placeholder='garden'
                     onChange={handleChange}
+                    required
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                   >
-                    <option disabled="true" selected required></option>
+                    <option disabled="true" selected></option>
                     <option value="true">Yes</option>
                     <option value="false">No</option>
 
@@ -313,9 +319,10 @@ function PropertyModal(props) {
                     autoComplete="garage"
                     placeholder='garage'
                     onChange={handleChange}
+                    required
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                   >
-                    <option disabled="true" selected required></option>
+                    <option disabled="true" selected></option>
                     <option value="true">Yes</option>
                     <option value="false">No</option>
 
