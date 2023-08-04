@@ -30,7 +30,7 @@ export default function HomePage() {
 
         </div>
         <hr />
-        <h2>Upcoming Bookings</h2>
+        <h3>Upcoming Bookings</h3>
         <div className="bookings-section" style={{width: '50%'}}>
             {bookingData.map((item) => (
                 <BookingItem bookingObj={item}/>
