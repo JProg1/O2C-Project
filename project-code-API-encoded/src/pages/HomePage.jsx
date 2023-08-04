@@ -5,7 +5,7 @@ export default function HomePage() {
         <div className="homepage">
 
             <div className="writing">
-                <h1 className="homeTitle">Welcome to OP-Prop<br />Property Management solutions.</h1>
+                <h1 className="homeTitle">Welcome to OP-Prop<br />Property Solutions.</h1>
                 <p>Use the links to get started. The customer link will take you to the buyer & seller detail page
                     whilst the property page will take you to property detail.</p>
                 <a href="/cust" max-width="200">Customers</a>
@@ -13,7 +13,7 @@ export default function HomePage() {
             </div>
 
             <div>
-                <img src="https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width="450px" alt="KeysInDoor" />
+                <img src="https://pikwizard.com/pw/medium/330cadc46347e00aca6f2f11646e8a9c.avif" width="450px" alt="KeysInDoor" />
             </div>
 
         </div>
