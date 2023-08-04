@@ -29,6 +29,8 @@ export default function HomePage() {
 
 
         </div>
+        <hr />
+        <h2>Upcoming Bookings</h2>
         <div className="bookings-section" style={{width: '50%'}}>
             {bookingData.map((item) => (
                 <BookingItem bookingObj={item}/>
