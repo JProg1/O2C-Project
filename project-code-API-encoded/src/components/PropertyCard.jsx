@@ -1,6 +1,7 @@
 import { ButtonGroup, Button, Card } from "react-bootstrap";
-import { CalendarCheckFill, TrashFill } from 'react-bootstrap-icons';
+import { CalendarCheckFill } from 'react-bootstrap-icons';
 import AmendPropertyModal from "./AmendPropertyModal";
+import PropertyDeleteModal from "./PropertyDeleteModal";
 // Will import from JSON as this item will be mapped
 export default function PropertyCard({ id, cust_ref, address, status, asking_price, image, type, bedrooms, bathrooms, garden, garage, propObj }) {
     return (
@@ -22,7 +23,9 @@ export default function PropertyCard({ id, cust_ref, address, status, asking_pri
                     <AmendPropertyModal
                         propObj={propObj}/>
                     <Button variant="dark"><CalendarCheckFill/></Button>
-                    <Button variant="danger"><TrashFill/></Button>
+                    <PropertyDeleteModal 
+                        id={id}
+                        addr={address}/>
                 </ButtonGroup>            
     </Card.Body>
         </Card>
