@@ -41,6 +41,7 @@ export default function AmendPropertyModal(propObj) {
 
   const updateCard = (event) => {
     event.preventDefault();
+    handleChange();
     var entryID = event.target.id;
     fetch('http://127.0.0.1:9002/properties/' + entryID, {
       method: 'PUT',
