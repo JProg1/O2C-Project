@@ -13,7 +13,7 @@ export default function PropertyDeleteModal(props) {
     event.preventDefault();
     var entryID = event.target.id;
 
-    fetch(`http://127.0.0.1:3004/properties/${entryID}`, {
+    fetch(`http://localhost:9002/properties/${entryID}`, {
         method: 'DELETE',
         headers: {
             'Content-type': 'application/json'

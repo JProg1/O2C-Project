@@ -95,7 +95,8 @@ export default function CustomerPage() {
                                         buyer_budget={item.buyer_budget.toLocaleString()}
                                         address={item.addr_no + ' ' + item.addr_line_1 + ", " + item.addr_town + ', ' + item.addr_postcode}
                                         phone={item.phone}
-                                        email={item.email} />
+                                        email={item.email} 
+                                        propObj={item}/>
                                 </Col>
                             ))}
                         </Tab>
@@ -120,7 +121,8 @@ export default function CustomerPage() {
                                         phone={item.phone}
                                         // We use the findPropertiesCount functon to compare how many properties have this sellers ID.
                                         properties={findPropertiesCount(item.id, propertiesData)}
-                                        email={item.email} />
+                                        email={item.email}
+                                        propObj={item} />
                                 </Col>
                             ))}
                         </Tab>
