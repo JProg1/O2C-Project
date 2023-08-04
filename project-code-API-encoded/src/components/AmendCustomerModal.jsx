@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-export default function AmendBuyerModal(propObj) {
+import SellerAdd from './AddNewSeller';
+export default function AmendModal(propObj, type, data) {
     // if(propObj != null){
         propObj = propObj.propObj;
     // }
@@ -21,7 +22,7 @@ export default function AmendBuyerModal(propObj) {
 
   const handleChange = () => {
 
-    var elements = document.getElementById("updateBuyer").elements;
+    var elements = document.getElementById("updateForm").elements;
 
     for (var i = 0; i < elements.length; i++) {
       const name = elements[i].name;
@@ -38,9 +39,9 @@ export default function AmendBuyerModal(propObj) {
     event.preventDefault();
 
     handleChange();
-    
+
     var entryID = event.target.id;
-    fetch('http://127.0.0.1:9002/buyers/' + entryID, {
+    fetch(`http://127.0.0.1:9002/${type.toLowerCase()}s/${entryID}`, {
       method: 'PUT',
       headers: {
         'Content-type': 'application/json'
@@ -65,13 +66,13 @@ export default function AmendBuyerModal(propObj) {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Update Existing Buyer</Modal.Title>
+          <Modal.Title>Update Customer - {data}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div>
-            <form id="updateBuyer" action="" >
+            <form id="updateForm" action="" >
             <div className="border-b border-gray-900/10 pb-12">
-          <p className="mt-1 text-sm leading-6 text-gray-600">Use the buyers current contact details in all instances. <br/>
+          <p className="mt-1 text-sm leading-6 text-gray-600">Use the current contact details in all instances. <br/>
           <em><strong>All fields must completed.</strong></em></p>
 
 
@@ -103,7 +104,7 @@ export default function AmendBuyerModal(propObj) {
                 </select>
               </div>
             </div>
-          <div className="sm:col-span-2 sm:col-start-5">
+            <div className="sm:col-span-2 sm:col-start-5">
               <label htmlFor="budget" className="block text-sm font-medium leading-6 text-gray-900">
                 Budget
               </label>

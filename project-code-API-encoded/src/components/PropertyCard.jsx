@@ -2,7 +2,8 @@ import { ButtonGroup, Button, Card } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { CalendarCheckFill } from 'react-bootstrap-icons';
 import AmendPropertyModal from "./AmendPropertyModal";
-import PropertyDeleteModal from "./PropertyDeleteModal";
+// import PropertyDeleteModal from "./PropertyDeleteModal";
+import DeleteModal from "./DeleteModal";
 // Will import from JSON as this item will be mapped
 
 function findSellerName(sellerID, sellerArray) {
@@ -22,7 +23,7 @@ export default function PropertyCard({ id, cust_ref, address, status, asking_pri
     }, []);
     
     return (
-        <Card style={{ width: '25rem', margin: '0 0 1rem 0' }}>
+        <Card style={{ width: '25rem', margin: '0 auto 1rem auto' }}>
             <Card.Body>
                 <Card.Img variant="top" style={{ height: '16rem' }} src={image} />
                 <Card.Title>Property: [{id}] <br />
@@ -40,9 +41,13 @@ export default function PropertyCard({ id, cust_ref, address, status, asking_pri
                     <AmendPropertyModal
                         propObj={propObj}/>
                     <Button variant="dark"><CalendarCheckFill/></Button>
-                    <PropertyDeleteModal 
+                    {/* <PropertyDeleteModal 
                         id={id}
-                        addr={address}/>
+                        addr={address}/> */}
+                        <DeleteModal 
+                        type="properties"
+                        id={id}
+                        data={address}/>
                 </ButtonGroup>            
     </Card.Body>
         </Card>
