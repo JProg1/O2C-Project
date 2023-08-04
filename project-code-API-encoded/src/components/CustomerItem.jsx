@@ -1,7 +1,6 @@
 import { Button, Card } from "react-bootstrap";
-import AmendBuyerModal from "./AmendBuyerModal";
-import AmendSellerModal from "./AmendSellerModal";
 import DeleteModal from "./DeleteModal";
+import AmendCustomerModal from "./AmendCustomerModal";
 
 // Will import from JSON as this item will be mapped
 export default function CustomerItem({ id, name, address, phone, email, buyer_budget, properties, propObj }) {
