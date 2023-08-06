@@ -13,7 +13,7 @@ function findSellerName(sellerID, sellerArray) {
     }
     return "Await seller details..";
 }
-export default function PropertyCard({ id, cust_ref, address, status, asking_price, image, type, bedrooms, bathrooms, garden, garage, propObj }) {
+export default function PropertyCard({ id, cust_ref, address, address1, postcode, status, asking_price, image, type, bedrooms, bathrooms, garden, garage, propObj }) {
     const [sellerData, setSellerData] = useState([]);
     useEffect(() => {
         fetch('http://localhost:9002/sellers', {mode: 'cors'})
@@ -29,7 +29,8 @@ export default function PropertyCard({ id, cust_ref, address, status, asking_pri
                 <Card.Title>Property: [{id}] <br />
                     Customer: {cust_ref} - {findSellerName(cust_ref, sellerData)}</Card.Title>
                 <Card.Text>
-                    {address} <br />
+                    {address1} <br />
+                    {postcode} <br />
                     Currently: <strong>{status}</strong> <br />
                     £{asking_price}.00 <br />
                     Type: {type} <br />
