@@ -60,7 +60,9 @@ export default function PropertyPage() {
                                 cust_ref={item.customer_ref}
                                 status={item.status}
                                 asking_price={item.asking_price.toLocaleString("en-GB")}
-                                address={item.addr_no + ', ' + item.addr_line_1 + ", " + item.addr_town + ', ' + item.addr_postcode}
+                                // address={item.addr_no + ', ' + item.addr_line_1 + ", " + item.addr_town + ', ' + item.addr_postcode}
+                                address1={item.addr_no + ', ' + item.addr_line_1 + ", " + item.addr_town}
+                                postcode={item.addr_postcode}
                                 type={item.type}
                                 bedrooms={item.bedrooms}
                                 bathrooms={item.bathrooms}
