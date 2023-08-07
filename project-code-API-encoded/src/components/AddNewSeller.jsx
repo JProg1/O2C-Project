@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { PersonFillAdd } from 'react-bootstrap-icons';
 
 function SellerModal(props) {
   const [inputs, setInputs] = useState({});
@@ -267,10 +268,7 @@ export default function SellerAdd() {
   return (
     <>
 
-      <Button variant="outline-primary" id="button-addon2" onClick={() => setModalShow(true)}>
-        Add New
-      </Button>
-
+      <Button variant="success" onClick={() => setModalShow(true)}><PersonFillAdd /></Button>
 
       <SellerModal
         show={modalShow}
