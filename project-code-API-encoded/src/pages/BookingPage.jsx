@@ -2,9 +2,7 @@ import { Container, Form, Row, Tab, Tabs, Col, InputGroup } from "react-bootstra
 import './PropertyStyle.css';
 import { useEffect, useState } from "react";
 import BookingItem from '../components/BookingItem';
-
-// to be replaced
-import PropertyAdd from '../components/AddNewProperty';
+import BookingAdd from "../components/AddNewBooking";
 
 
 
@@ -33,7 +31,7 @@ export default function BookingPage() {
                             aria-label="Search"
                         />
                         {/* calls modal button */}
-                        <PropertyAdd />
+                        <BookingAdd />
                     
                     </InputGroup>
                 <Col>
