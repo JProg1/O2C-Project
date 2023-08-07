@@ -1,4 +1,4 @@
-import { Container, Form, Row, Tab, Tabs, Col, InputGroup } from "react-bootstrap";
+import { Container, Form, Row, Col, InputGroup } from "react-bootstrap";
 import './PropertyStyle.css';
 import { useEffect, useState } from "react";
 import BookingItem from '../components/BookingItem';
@@ -23,7 +23,7 @@ export default function BookingPage() {
     const handleSearch = (event) => {
         let criteria = event.target.value.toLowerCase();
         var result = bookingData.filter(data => {
-            var comparison = `${data.id} ${data.notes} ${data.buyer.titles} ${data.buyer.first_name} ${data.buyer.surname} ${data.buyer.phone} ${data.buyer.email} ${data.property.addr_no} ${data.property.addr_line_1} ${data.property.addr_postcode} ${data.property.addr_town} £${data.time}`;
+            var comparison = `${data.id} ${data.notes} ${data.buyer.titles} ${data.buyer.first_name} ${data.buyer.surname} ${data.buyer.phone} ${data.buyer.email} ${data.property.addr_no} ${data.property.addr_line_1} ${data.property.addr_postcode} ${data.property.addr_town} ${new Date(data.time).toLocaleString()}`;
             return comparison.toLowerCase().includes(criteria);
         });
         setFilteredBookingData(result);
