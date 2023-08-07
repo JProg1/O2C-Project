@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { CalendarCheckFill } from 'react-bootstrap-icons';
+import { CalendarPlusFill } from 'react-bootstrap-icons';
 
 function getBuyerFromID(buyerID, buyerArray) {
     var b = buyerArray.filter(x => x.id === parseInt(buyerID))[0];
@@ -72,7 +72,8 @@ export default function BookingAdd(props) {
     }
     return (
         <>
-            <Button variant="success" onClick={handleShow}><CalendarCheckFill /></Button>
+            <Button variant="success" onClick={handleShow}><CalendarPlusFill /></Button>
+
             <Modal
                 show={modalShow}
                 onHide={handleClose}
@@ -161,6 +162,7 @@ export default function BookingAdd(props) {
                                             autoComplete="notes"
                                             placeholder=' Booking notes'
                                             onChange={handleChange}
+                                            maxLength="85"
                                             required
                                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         />
