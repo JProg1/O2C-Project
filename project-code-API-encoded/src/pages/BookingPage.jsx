@@ -13,10 +13,10 @@ export default function BookingPage() {
     const [filteredBookingData, setFilteredBookingData] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9002/bookings', {mode: 'cors'})
+        fetch('http://localhost:9002/bookings', { mode: 'cors' })
             .then((response) => response.json())
             .then((data) => { setBookingData(data); setFilteredBookingData(data) })
-            .catch((error) => {console.log(error)});
+            .catch((error) => { console.log(error) });
     }, []);
 
     // Wildcard search functionality - compares actively the search criteria to a string built from the json data.
@@ -34,32 +34,32 @@ export default function BookingPage() {
 
     return (
 
-        <Container>
+        <Container fluid="xxl">
             <Row>
-                
+
                 <h2 style={{ margin: '1rem auto 1rem auto' }}><strong>Bookings</strong></h2>
-                    <InputGroup className="mb-3">
-                        
-                        <Form.Control
-                            onChange={handleSearch}
-                            placeholder="Search"
-                            aria-label="Search"
-                        />
-                        {/* calls modal button */}
-                        <BookingAdd />
-                    
-                    </InputGroup>
-                <Col>
+                <InputGroup className="mb-3">
 
-                    <div className="bookings-section" style={{width: '90%', margin: '0 auto 1rem auto' }}>
-                    {filteredBookingData.map((item) => (
-                        <BookingItem bookingObj={item}/>
-                    ))}
-                    </div>
-                
-                </Col>
+                    <Form.Control
+                        onChange={handleSearch}
+                        placeholder="Search"
+                        aria-label="Search"
+                    />
+                    {/* calls modal button */}
+                    <BookingAdd />
 
+                </InputGroup>
             </Row>
-    </Container>
+
+            <div className="bookings-section" style={{ width: 'auto', margin: '0 auto 1rem auto' }}>
+                {filteredBookingData.map((item) => (
+                    <Row>
+                        <BookingItem bookingObj={item} />
+                    </Row>
+                ))}
+            </div>
+
+
+        </Container>
     )
 }
