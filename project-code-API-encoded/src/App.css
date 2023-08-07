@@ -71,10 +71,26 @@ main {
   border-radius: 15px;
 }
 
-.footer-text {
-
+h3 {
+  padding: 1rem 15rem 1rem 15rem;
+  background-color: rgba(180, 244, 180,0.4);
+  border-radius: 10px;
   color: rgb(94, 136, 151);
-  padding: 1rem;
+}
+
+h3:hover {
+  padding: 1rem 16rem 1rem 16rem;
+  background-color: rgba(180, 244, 180,0.8);
+  border-radius: 10px;
+  color: rgb(94, 136, 151);
+  transition: 2000ms;
+}
+
+
+.footer-text {
+  font-size: smaller;
+  color: rgb(94, 136, 151);
+  padding: 0.5rem;
   float:right;
   margin-top: 20px;
 }
@@ -83,7 +99,7 @@ main {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 60px; /* Set the fixed height of the footer here */
-  line-height: 60px; /* Vertically center the text there */
+  height: 35px; /* Set the fixed height of the footer here */
+  line-height: 20px; /* Vertically center the text there */
   background-color: #f5f5f5;
 }
