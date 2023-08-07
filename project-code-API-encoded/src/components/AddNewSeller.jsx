@@ -39,7 +39,7 @@ function SellerModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h3 className="text-gray-500">Enter the required seller data below</h3>
+        <h4 className="text-gray-500">Enter the required seller data below</h4>
         <form id="updateSeller" onSubmit={handleSubmit}>
           <div className="border-b border-gray-900/10 pb-12">
             <p className="mt-1 text-sm leading-6 text-gray-600">Use the sellers current contact details in all instances. <br />
