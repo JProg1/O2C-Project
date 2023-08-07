@@ -1,4 +1,5 @@
 import { Button, ButtonGroup, Card } from "react-bootstrap";
+import DeleteModal from "./DeleteModal";
 
 // Will import from JSON as this item will be mapped
 export default function BookingItem({ bookingObj }) {
@@ -12,13 +13,12 @@ export default function BookingItem({ bookingObj }) {
                     {date} - With {bookingObj.buyer.title} {bookingObj.buyer.first_name} {bookingObj.buyer.surname} <small><i>Tel: {bookingObj.buyer.phone}</i></small>
                     </div>
                     <div>
-                        {/* <ButtonGroup style={{ float: "right" }}>
-                            <AmendCustomerModal propObj={propObj} sendType={seller ? "Seller" : "Buyer"} id={id}/>
+                        <ButtonGroup style={{ float: "right" }}>
                             <DeleteModal style={{ float: "right" }}
-                                type={seller ? "sellers" : "buyers"}
-                                id={id}
-                                data={name} />
-                        </ButtonGroup> */}
+                                type="bookings"
+                                id={bookingObj.id}
+                                data={"Booking " + bookingObj.id + ", " + new Date(bookingObj.time).toLocaleString()} />
+                        </ButtonGroup>
                     </div>
                 </Card.Title>
                 <Card.Text>
