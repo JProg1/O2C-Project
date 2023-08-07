@@ -8,7 +8,7 @@ export default function Footer() {
             <footer>
                 <Container style={{ float: "right" }}>
                     <Row className="footer-text">
-                        <h6>© Copyright OP-Prop 2023</h6>
+                        <p>© Copyright OP-Prop 2023</p>
                     </Row>
                 </Container>
             </footer>
