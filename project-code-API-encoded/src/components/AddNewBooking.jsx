@@ -34,30 +34,40 @@ export default function BookingAdd(props) {
             .catch((error) => { console.log(error) });
     }, []);
     const handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        if (event.target.name === "customer_ref") {
-            setInputs(values => ({ ...values, "buyer": getBuyerFromID(value, buyerArray) }));
-            setInputs(values => ({ ...values, "property": getPropertyFromID(value, propertyArray) }));
-        } else if (event.target.type === "number") {
-            setInputs(values => ({ ...values, [name]: parseInt(value) }));
-        } else {
-            setInputs(values => ({ ...values, [name]: value }));
+
+        var elements = document.getElementById("newBooking").elements;
+
+        for (var i = 0; i < elements.length; i++) {
+            const name = elements[i].name;
+            const value = elements[i].value;
+            if (name === "customer_ref") {
+                setInputs(values => ({ ...values, "buyer": getBuyerFromID(value, buyerArray) }));
+            } else if (name === "property_id") {
+                setInputs(values => ({ ...values, "property": getPropertyFromID(value, propertyArray) }));
+            } else if (name === "time"){
+                // set it as a date object so it passes correctly to MySQL / REST API
+                var time = new Date(value);
+                setInputs(values => ({ ...values, [name]: time }));
+            } else
+                if (elements[i].type == "number") {
+                    setInputs(values => ({ ...values, [name]: parseInt(value) }))
+                } else {
+                    setInputs(values => ({ ...values, [name]: value }))
+                }
         }
-        console.log(inputs);
     }
 
     // Handle submit event, which pushes the data to the JSON-Server and prevents refresh of page until it's done processing.
     const handleSubmit = (event) => {
         event.preventDefault();
+        // console.log(inputs)
         fetch('http://127.0.0.1:9002/bookings', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
             },
             body: JSON.stringify(inputs)
-        })
-            .then((response) => { console.log(response); window.location.reload(false); }, (error) => console.log(error));
+        }).then((response) => { console.log(response); window.location.reload(false); }, (error) => console.log(error));
 
     }
     return (
@@ -77,8 +87,8 @@ export default function BookingAdd(props) {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <h3 className="text-gray-500">Enter the required booking data below</h3>
-                    <form id="updateBuyer" onSubmit={handleSubmit}>
+                    <h4 className="text-gray-500">Enter the required booking data below</h4>
+                    <form id="newBooking" onSubmit={handleSubmit}>
                         <div className="border-b border-gray-900/10 pb-12">
                             <p className="mt-1 text-sm leading-6 text-gray-600"><em><strong>All fields must completed.</strong></em></p>
 
@@ -112,7 +122,7 @@ export default function BookingAdd(props) {
                                         Booking Time
                                     </label>
                                     <div className="mt-2">
-                                        <input type="datetime-local" id="time" name="time" required onChange={handleChange}/>
+                                        <input type="datetime-local" id="time" name="time" required onChange={handleChange} />
                                     </div>
                                 </div>
                                 <div className="sm:col-span-2">
@@ -121,16 +131,17 @@ export default function BookingAdd(props) {
                                     </label>
                                     <div className="mt-2">
                                         <select
-                                            id="customer_ref"
-                                            name="customer_ref"
+                                            id="property_id"
+                                            name="property_id"
                                             type="number"
-                                            autoComplete="customer_ref"
-                                            placeholder='customer reference'
+                                            autoComplete="property_id"
+                                            placeholder=''
                                             onChange={handleChange}
                                             defaultValue={props.propObj ? props.propObj.id : 0}
                                             required
                                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                                         >
+                                            <option disabled="true" selected></option>
                                             {propertyArray.map((item) => (
                                                 <option value={item.id}>{item.id} - {item.addr_no}, {item.addr_line_1}, {item.addr_town}</option>
                                             ))}
@@ -173,7 +184,7 @@ export default function BookingAdd(props) {
                     <button
                         type="submit"
                         className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                        form='updateBuyer'>
+                        form='newBooking' onMouseDown={handleChange}>
                         Submit
                     </button>
 
