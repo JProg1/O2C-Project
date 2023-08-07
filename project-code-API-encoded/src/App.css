@@ -78,12 +78,24 @@ h3 {
   color: rgb(94, 136, 151);
 }
 
+h3 a {
+  text-decoration: none;
+  border: none;
+  color: rgb(94, 136, 151);
+}
+
 h3:hover {
   padding: 1rem 16rem 1rem 16rem;
   background-color: rgba(180, 244, 180,0.8);
   border-radius: 10px;
   color: rgb(94, 136, 151);
   transition: 2000ms;
+}
+
+h3 a:hover {
+  text-decoration: none;
+  border: none;
+  color: rgb(94, 136, 151);
 }
 
 

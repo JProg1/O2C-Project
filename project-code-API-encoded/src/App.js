@@ -2,6 +2,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import CustomerPage from './pages/CustomerPage';
 import PropertyPage from './pages/PropertyPage';
+import BookingPage from './pages/BookingPage';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import './App.css';
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/cust" element={<CustomerPage />} />
             <Route path="/prop" element={<PropertyPage/>} />
+            <Route path="/booking"element={<BookingPage/>} />
           </Routes>
           <link
             rel="stylesheet"
