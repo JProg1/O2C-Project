@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { CalendarCheckFill } from 'react-bootstrap-icons';
+import { CalendarPlusFill } from 'react-bootstrap-icons';
 
 function getBuyerFromID(buyerID, buyerArray) {
     var b = buyerArray.filter(x => x.id === parseInt(buyerID))[0];
@@ -72,7 +72,7 @@ export default function BookingAdd(props) {
     }
     return (
         <>
-            <Button variant="dark" onClick={handleShow}><CalendarCheckFill /></Button>
+            <Button variant="dark" onClick={handleShow}><CalendarPlusFill /></Button>
             <Modal
                 show={modalShow}
                 onHide={handleClose}
