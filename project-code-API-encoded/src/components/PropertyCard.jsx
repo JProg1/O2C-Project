@@ -1,9 +1,9 @@
-import { ButtonGroup, Button, Card } from "react-bootstrap";
+import { ButtonGroup, Card } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import { CalendarCheckFill } from 'react-bootstrap-icons';
 import AmendPropertyModal from "./AmendPropertyModal";
 // import PropertyDeleteModal from "./PropertyDeleteModal";
 import DeleteModal from "./DeleteModal";
+import BookingAdd from "./AddNewBooking";
 // Will import from JSON as this item will be mapped
 
 function findSellerName(sellerID, sellerArray) {
@@ -41,14 +41,11 @@ export default function PropertyCard({ id, cust_ref, address, address1, postcode
                 <ButtonGroup aria-label="Basic example">
                     <AmendPropertyModal
                         propObj={propObj}/>
-                    <Button variant="dark"><CalendarCheckFill/></Button>
-                    {/* <PropertyDeleteModal 
-                        id={id}
-                        addr={address}/> */}
-                        <DeleteModal 
-                        type="properties"
-                        id={id}
-                        data={address}/>
+                    <BookingAdd propObj={propObj}/>
+                    <DeleteModal 
+                    type="properties"
+                    id={id}
+                    data={address}/>
                 </ButtonGroup>            
     </Card.Body>
         </Card>
