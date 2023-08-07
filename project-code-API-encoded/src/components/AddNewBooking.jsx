@@ -7,6 +7,10 @@ function getBuyerFromID(buyerID, buyerArray) {
     var b = buyerArray.filter(x => x.id === parseInt(buyerID))[0];
     return b;
 }
+function getPropertyFromID(propertyID, propertyArray) {
+    var property = propertyArray.filter(x => x.id === parseInt(propertyID))[0];
+    return property;
+}
 
 export default function BookingAdd(props) {
     const [modalShow, setModalShow] = React.useState(false);
@@ -34,7 +38,7 @@ export default function BookingAdd(props) {
         const value = event.target.value;
         if (event.target.name === "customer_ref") {
             setInputs(values => ({ ...values, "buyer": getBuyerFromID(value, buyerArray) }));
-            setInputs(values => ({ ...values, "property": props.propObj }));
+            setInputs(values => ({ ...values, "property": getPropertyFromID(value, propertyArray) }));
         } else if (event.target.type === "number") {
             setInputs(values => ({ ...values, [name]: parseInt(value) }));
         } else {
@@ -123,7 +127,7 @@ export default function BookingAdd(props) {
                                             autoComplete="customer_ref"
                                             placeholder='customer reference'
                                             onChange={handleChange}
-                                            defaultValue={props.propObj.id}
+                                            defaultValue={props.propObj ? props.propObj.id : 0}
                                             required
                                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-lg ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                                         >
