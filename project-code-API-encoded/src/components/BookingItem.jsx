@@ -23,7 +23,7 @@ export default function BookingItem({ bookingObj }) {
                 </Card.Title>
                 <Card.Text>
                     <div style={{ width: "80%" }}>
-                        at {address} | Asking £{bookingObj.property.asking_price.toLocaleString("en-GB")}
+                        at {address} | Asking £{bookingObj.property.asking_price.toLocaleString("en-GB")}<br /><b><small>{bookingObj.notes}</small></b>
                     </div>
                 </Card.Text>
             </Card.Body>
