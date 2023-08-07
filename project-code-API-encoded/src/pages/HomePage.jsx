@@ -11,6 +11,8 @@ export default function HomePage() {
             .catch((error) => {console.log(error)});
     }, []);
 
+    
+
     return (
         <>
         <div className="homepage">
@@ -30,7 +32,7 @@ export default function HomePage() {
 
         </div>
         <hr />
-        <h3>Upcoming Bookings</h3>
+        <h3><a href="/booking">Upcoming Bookings</a></h3>
         <div className="bookings-section" style={{width: '50%'}}>
             {bookingData.map((item) => (
                 <BookingItem bookingObj={item}/>
