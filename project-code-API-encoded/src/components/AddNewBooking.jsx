@@ -72,7 +72,7 @@ export default function BookingAdd(props) {
     }
     return (
         <>
-            <Button variant="dark" onClick={handleShow}><CalendarCheckFill /></Button>
+            <Button variant="success" onClick={handleShow}><CalendarCheckFill /></Button>
             <Modal
                 show={modalShow}
                 onHide={handleClose}

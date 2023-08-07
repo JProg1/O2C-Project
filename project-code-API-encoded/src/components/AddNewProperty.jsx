@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import "./InputStyles.css";
+import { HouseAddFill } from 'react-bootstrap-icons';
 
 function PropertyModal(props) {
   const [inputs, setInputs] = useState({});
@@ -380,10 +381,7 @@ export default function PropertyAdd() {
   return (
     <>
     
-      <Button variant="outline-primary" id="button-addon2" onClick={() => setModalShow(true)}>
-        Add New
-      </Button>
-
+      <Button variant="success" onClick={() => setModalShow(true)}><HouseAddFill /></Button>
 
       <PropertyModal
         show={modalShow}
