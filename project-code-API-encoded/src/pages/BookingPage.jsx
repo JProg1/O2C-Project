@@ -10,12 +10,27 @@ import BookingAdd from "../components/AddNewBooking";
 export default function BookingPage() {
 
     const [bookingData, setBookingData] = useState([]);
+    const [filteredBookingData, setFilteredBookingData] = useState([]);
+
     useEffect(() => {
         fetch('http://localhost:9002/bookings', {mode: 'cors'})
             .then((response) => response.json())
-            .then((data) => { setBookingData(data) })
+            .then((data) => { setBookingData(data); setFilteredBookingData(data) })
             .catch((error) => {console.log(error)});
     }, []);
+
+    // Wildcard search functionality - compares actively the search criteria to a string built from the json data.
+    const handleSearch = (event) => {
+        let criteria = event.target.value.toLowerCase();
+        var result = bookingData.filter(data => {
+            var comparison = `${data.id} ${data.notes} ${data.buyer.titles} ${data.buyer.first_name} ${data.buyer.surname} ${data.buyer.phone} ${data.buyer.email} ${data.property.addr_no} ${data.property.addr_line_1} ${data.property.addr_postcode} ${data.property.addr_town} £${data.time}`;
+            return comparison.toLowerCase().includes(criteria);
+        });
+        setFilteredBookingData(result);
+        if (criteria.trim() === '') {
+            setFilteredBookingData(bookingData)
+        }
+    }
 
     return (
 
@@ -26,7 +41,7 @@ export default function BookingPage() {
                     <InputGroup className="mb-3">
                         
                         <Form.Control
-                            onChange={false}
+                            onChange={handleSearch}
                             placeholder="Search"
                             aria-label="Search"
                         />
@@ -37,7 +52,7 @@ export default function BookingPage() {
                 <Col>
 
                     <div className="bookings-section" style={{width: '90%', margin: '0 auto 1rem auto' }}>
-                    {bookingData.map((item) => (
+                    {filteredBookingData.map((item) => (
                         <BookingItem bookingObj={item}/>
                     ))}
                     </div>
